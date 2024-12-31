@@ -1,0 +1,13 @@
+.form-label{
+    display: block;
+}
+
+.quiz-param-form{
+    display: flex;
+    text-align: center;
+}
+
+#formSubmit{
+    width: 33%;
+
+}
