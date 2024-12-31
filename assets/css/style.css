@@ -1,13 +1,29 @@
-.form-label{
-    display: block;
+
+.header-div{
+    text-align: center;
+    padding: 20px;
 }
 
 .quiz-param-form{
-    display: flex;
     text-align: center;
+    width: 60%;
+    border: solid 1px #000; 
+    border-radius: 15px;
+    margin: auto;
+    padding: 10px;
+}
+
+.form-header{
+    margin-bottom: 15px;
+}
+
+.form-select{
+    text-align: center;
+    font-size: 150%;
+    padding: 10px;
 }
 
 #formSubmit{
     width: 33%;
-
+    font-size: 150%;
 }

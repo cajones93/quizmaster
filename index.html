@@ -8,54 +8,67 @@
     <link rel="stylesheet" href="assets/css/style.css">
   </head>
   <body>
-    <h1>Quizmaster</h1>
-    <h2>Let's get you started</h2>
-
+    <div class="header-div">
+        <h1>Quizmaster</h1>
+        <h2>Let's get you started</h2>
+    </div>
       <!-- FORM -->
-      <form class="row g-3 quiz-param-form">
+      <form class="quiz-param-form">
         <!-- num of questions -->
-        <div class="row g-3">
-            <div class="col-md-6">
-                <label for="noOfQuestions">Number of Questions</label>
-                <input type="text" class="form-control" id="floatingInput" placeholder="10">
+        <header>
+            <h1 class="form-header">Choose Your Quiz Parameters.</h1>
+        </header>
+            <div class="mb-3">
+                
+                <select id="noOfQuestions" class="form-select">
+                    <option selected>Select Number of Questions</option>
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="25">25</option>
+                    <option value="50">50</option>
+                </select>
             </div>
-        </div>
+
         <!-- category -->
-        <div class="row">
-            <div class="col-md-6">
-                <label for="inputState" class="form-label">State</label>
-                <select id="inputState" class="form-select">
+
+            <div class="mb-3">
+                
+                <select id="categoryChoice" class="form-select">
+                    <option selected>Choose a Category</option>
                     <option value="animals">Animals</option>
                     <option value="videoGames">Video Games</option>
                     <option value="music">Music</option>
                     <option value="film">Film</option>
                 </select>
             </div>
-        </div>
+
           <!-- difficulty -->
-        <div class="row">
-            <div class="col-md-6">
-                <label for="inputState" class="form-label">State</label>
-                <select id="inputState" class="form-select">
+
+            <div class="mb-3">
+
+                <select id="difficultyChoice" class="form-select">
+                    <option selected>Choose Difficulty</option>
                     <option value="easy">Easy</option>
                     <option value="medium">Medium</option>
                     <option value="hard">Hard</option>
                 </select>
             </div>
-        </div>
+
           <!-- quiz type -->
-        <div class="row">
-            <div class="col-md-6">
-                <label for="inputState" class="form-label">State</label>
-                <select id="inputState" class="form-select">
+
+            <div class="mb-3">
+
+                <select id="quizTypeChoice" class="form-select">
+                    <option selected>Choose the Type of Quiz</option>
                     <option value="multipleChoice">Multiple Choice</option>
                     <option value="trueFalse">True / False</option>
                 </select>
             </div>
-        </div>
+
           <!-- submit button -->
         <button id="formSubmit" type="submit" class="btn btn-primary">Submit</button>
         </form>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-  </body>
+    <script src="scripts/script.js"></script>
+</body>
 </html>
