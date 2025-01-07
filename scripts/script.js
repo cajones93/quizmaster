@@ -67,8 +67,8 @@ let API_URL = submitButton.addEventListener("click", async (e) => {
 
 // assign the correct category ID based on category choice
 function setCategoryID (categoryChoice){
-    if(categoryChoice === "animals"){
-        return 27;
+    if(categoryChoice === "scienceAndNature"){
+        return 17;
     }
     else if(categoryChoice === "videoGames"){
         return 15;
