@@ -1,12 +1,28 @@
 
 
-let submitButton = document.getElementById("formSubmit");
-let quizParamForm = document.getElementById("quiz-param-form");
-let quizData; 
+const submitButton = document.getElementById("formSubmit");
+const quizParamForm = document.getElementById("quiz-param-form");
+const selectElements = document.querySelectorAll('select');
+
+
+// check parameters are selected each time user changes an option, enable submit button when all parameters are selected
+selectElements.forEach(select => {
+    select.addEventListener("change", () => {
+      if (allParamsSelected()) {
+        submitButton.classList.remove("disabled"); 
+      } else {
+        submitButton.classList.add("disabled"); 
+      }
+    });
+  });
+
+// check that user has selected a parameter
+function allParamsSelected() {
+    return Array.from(selectElements).every(select => select.value !== select.options[0].value);
+  }
 
 
 submitButton.addEventListener("click", (e) => {
-    e.preventDefault();
     getAPIURL();
 });
 
@@ -26,6 +42,7 @@ async function getSessionToken(){
     }
 }
 
+// build the api url and pass it into local storage for the game page to retrieve
 async function getAPIURL(){
 
 
@@ -36,6 +53,7 @@ async function getAPIURL(){
 
     let categoryID = setCategoryID(categoryChoice.value);
 
+    // for testing
     console.log(noOfQuestions.value);
     console.log(categoryChoice.value);
     console.log(categoryID);
@@ -50,8 +68,6 @@ async function getAPIURL(){
     
     console.log(sessionToken);
     console.log(API_URL);
-
-    // wait for quiz data
     
 
     //set quiz data into local storage
