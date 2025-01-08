@@ -32,6 +32,13 @@
 
 
 /* QUIZ */
+.container{
+    text-align: center;
+}
+
+.answer-col{
+    justify-items: center;
+}
 
 .answer-button{
     padding: 10px;
