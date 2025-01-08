@@ -5,7 +5,10 @@ let quizParamForm = document.getElementById("quiz-param-form");
 let quizData; 
 
 
-submitButton.addEventListener("click", getAPIURL);
+submitButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    getAPIURL();
+});
 
 // generate a session token
 async function getSessionToken(){
@@ -23,7 +26,8 @@ async function getSessionToken(){
     }
 }
 
-function getAPIURL(){
+async function getAPIURL(){
+
 
     let noOfQuestions = document.getElementById("noOfQuestions");
     let categoryChoice = document.getElementById("categoryChoice");
@@ -39,7 +43,7 @@ function getAPIURL(){
     console.log(quizTypeChoice.value);
 
     // Wait for session token
-    const sessionToken = getSessionToken(); // Await the promise
+    const sessionToken = await getSessionToken(); // Await the promise
 
     // build the api url using the session token
     let API_URL = `https://opentdb.com/api.php?amount=${noOfQuestions.value}&category=${categoryID}&difficulty=${difficultyChoice.value}&type=${quizTypeChoice.value}&token=${sessionToken}`;
