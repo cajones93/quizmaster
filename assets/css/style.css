@@ -4,6 +4,8 @@
     padding: 20px;
 }
 
+/* FORM */
+
 #quiz-param-form{
     text-align: center;
     width: 60%;
@@ -26,4 +28,12 @@
 #formSubmit{
     width: 33%;
     font-size: 150%;
+}
+
+
+/* QUIZ */
+
+.answer-button{
+    padding: 10px;
+    margin: 5px;
 }
