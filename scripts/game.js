@@ -1,11 +1,12 @@
 
 let quizData;
-
-let score = 0;
 let quizLength, sessionToken, quizCategory, difficulty, quizType;
 let questionNo = 0;
+let score = 0;
 let currentQuestion;
 let quizQuestions;
+
+// URL to reset session token (add session token after)
 let tokenResetURL = "https://opentdb.com/api_token.php?command=reset&token=";
 
 
@@ -44,18 +45,19 @@ async function getData(API_URL) {
 
   const data = await response.json();
 
+//   if session token needs to be reset, reset it and call this function again
   if(data.response_code === "4"){
-    response = await fetch(tokenResetURL + token);
-    if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
+    const resetResponse = await fetch(tokenResetURL + token);
+    if (!resetResponse.ok) {
+        throw new Error(`Error resetting session token! status: ${resetResponse.status}`);
       }
-    getData(API_URL);
+      // call function again to get data
+    return getData(API_URL);
   }
   else {
-    console.log("Data", data);
+    // not response code 4
     return data;
   }
-    return 1;
 }
 
 // Initial event listeners
@@ -99,8 +101,11 @@ async function startGame(){
     let API_URL = await quizParams.url;
 
     console.log(API_URL);
+    try{
     quizData = await getData(API_URL);
-
+    } catch (error){
+        console.error("Error:", error);
+    }
     console.log(quizData);
 
     // map data into quiz questions
@@ -142,24 +147,13 @@ function decodeHtml(html) {
     return txt.value;
 }
 
-function checkIfEncoded(questionText){
-    if (typeof questionText === 'string' && (questionText.includes("&quot;") || questionText.includes("&#039;") || questionText.includes("&eacute;"))) {
-        let decodedText = decodeURI(questionText);
-        return decodedText;
-    }
-    else{
-        return questionText;
-    }
-    
-}
-
 async function setQuestionAndAnswers() {
     // After final question
     if (questionNo >= quizLength){
         showScore();
     }
     
-    currentQuestion = checkIfEncoded(quizQuestions[questionNo]);
+    currentQuestion = quizQuestions[questionNo];
 
     console.log("current question: ", currentQuestion);
     // set question text
