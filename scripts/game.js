@@ -2,10 +2,11 @@
 let quizData;
 
 let score = 0;
-let quizLength, quizCategory, difficulty, quizType;
+let quizLength, sessionToken, quizCategory, difficulty, quizType;
 let questionNo = 0;
 let currentQuestion;
 let quizQuestions;
+let tokenResetURL = "https://opentdb.com/api_token.php?command=reset&token=";
 
 
 let scoreText = document.getElementById("score");
@@ -42,8 +43,19 @@ async function getData(API_URL) {
   }
 
   const data = await response.json();
-  return data;
 
+  if(data.response_code === "4"){
+    response = await fetch(tokenResetURL + token);
+    if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+    getData(API_URL);
+  }
+  else {
+    console.log("Data", data);
+    return data;
+  }
+    return 1;
 }
 
 // Initial event listeners
@@ -71,6 +83,7 @@ function getParams(){
         let quizParams = JSON.parse(localStorage.getItem('quizParams'));
 
         // set the parameters
+        sessionToken = quizParams.token;
         quizLength = quizParams.quizLength;
         quizCategory = quizParams.quizCategory;
         difficulty = quizParams.difficulty;
