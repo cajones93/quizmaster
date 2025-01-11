@@ -69,13 +69,21 @@ async function getAPIURL(){
     console.log(sessionToken);
     console.log(API_URL);
     
+    const quizParams = {
+        url: API_URL,
+        quizLength: noOfQuestions.value,
+        quizCategory: categoryChoice.value,
+        difficulty: difficultyChoice.value,
+        quizType: quizTypeChoice.value 
+      };
+      
 
-    //set data into local storage
-    localStorage.setItem("API_URL", API_URL);
-    localStorage.setItem("quizLength", noOfQuestions.value);
-    localStorage.setItem("quizCategory", categoryChoice.value);
-    localStorage.setItem("difficultyChoice", difficultyChoice.value);
-    localStorage.setItem("quizType", quizTypeChoice.value);
+    //set data into session storage
+    localStorage.setItem("quizParams", JSON.stringify(quizParams));
+    // sessionStorage.setItem("API_URL", API_URL);
+
+    let retrieved = localStorage.getItem("quizParams");
+      console.log(retrieved);
 };
 
 // assign the correct category ID based on category choice
