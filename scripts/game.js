@@ -1,17 +1,36 @@
 
 let quizData;
-let question = document.getElementById("question");
+
 let score = 0;
 let quizLength, quizCategory, difficulty, quizType;
 let questionNo = 0;
 let currentQuestion;
 let quizQuestions;
 
+
+let scoreText = document.getElementById("score");
+let question = document.getElementById("question");
 // answer buttons
 let answer1Btn = document.getElementById("answer1");
 let answer2Btn = document.getElementById("answer2");
 const answer3Btn = document.getElementById("answer3");
 const answer4Btn = document.getElementById("answer4");
+
+// Score Modal
+const scoreModal = document.getElementById("scoreModal");
+const scoreModalClose = document.getElementsByClassName("close")[0];
+const menuBtn = document.getElementById("menu-button");
+
+
+// Score modal functions
+scoreModalClose.onclick = function() {
+    scoreModal.style.display = "none";
+  }
+menuBtn.onclick = function() {
+    window.location.href = "index.html";
+    localStorage.clear();
+  }
+
 
 async function getData(API_URL) {
   const queryString = `${API_URL}`;
@@ -80,11 +99,13 @@ async function startGame(){
     
     console.log("Quiz Questions:", quizQuestions);
     
-      // remove initial event listeners and reveal buttonsbutton data
+    // remove initial event listeners and reveal buttonsbutton data
     changeButtons(quizParams.quizType);
-      addButtonListeners();
-      // Call setQuestionAndAnswers after defining it
-      setQuestionAndAnswers(); 
+    // add new listeners to check if answer is correct and change question and answers
+    addButtonListeners();
+
+    // Call setQuestionAndAnswers after defining it
+    setQuestionAndAnswers(); 
 }
 
 function addButtonListeners(){
@@ -102,17 +123,35 @@ function addButtonListeners(){
     }
 }
 
-async function setQuestionAndAnswers() {
-    // After final question
-    if (questionNo >= quizLength - 1){
-        // showScore();
+function decodeHtml(html) {
+    var txt = document.createElement("textarea");
+    txt.innerHTML = html;
+    return txt.value;
+}
+
+function checkIfEncoded(questionText){
+    if (typeof questionText === 'string' && (questionText.includes("&quot;") || questionText.includes("&#039;") || questionText.includes("&eacute;"))) {
+        let decodedText = decodeURI(questionText);
+        return decodedText;
+    }
+    else{
+        return questionText;
     }
     
-    currentQuestion = quizQuestions[questionNo];
+}
+
+async function setQuestionAndAnswers() {
+    // After final question
+    if (questionNo >= quizLength){
+        showScore();
+    }
+    
+    currentQuestion = checkIfEncoded(quizQuestions[questionNo]);
 
     console.log("current question: ", currentQuestion);
     // set question text
-    question.innerText = currentQuestion.question;
+
+    question.innerHTML = currentQuestion.question;
 
     let allAnswers = currentQuestion.incorrectAnswers.concat([currentQuestion.correctAnswer]); // Combine incorrect and correct answers
     
@@ -126,10 +165,20 @@ async function setQuestionAndAnswers() {
 
   
     // Assign answers to buttons
-    answer1Btn.innerText = allAnswers[0];
-    answer2Btn.innerText = allAnswers[1];
-    answer3Btn.innerText = allAnswers[2];
-    answer4Btn.innerText = allAnswers[3];
+    answer1Btn.innerHTML = allAnswers[0];
+    answer2Btn.innerHTML = allAnswers[1];
+    answer3Btn.innerHTML = allAnswers[2];
+    answer4Btn.innerHTML = allAnswers[3];
   
+    scoreText.innerText = score;
     questionNo++;
   }
+
+
+  function showScore(){
+    let resultText = document.getElementById("scoreModalResult");
+    resultText.innerText = score;
+    scoreModal.style.display = "block"
+  }
+
+ 

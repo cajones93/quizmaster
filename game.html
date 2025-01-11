@@ -10,7 +10,7 @@
   <body>
     <div class="header-div">
         <h1>Quizmaster</h1>
-        <h2>Let's get you started</h2>
+        <h2>Score: <strong><span id="score"></span></strong></h2>
     </div>
         <!-- num of questions -->
         <div class="container">
@@ -41,6 +41,17 @@
                 </div>
               </div>
           </div>
+
+                  <!-- Score Modal -->
+        <div id="scoreModal" class="modal center">
+
+          <!-- Modal content -->
+          <div class="scoreModal-content center">
+            <span class="close">&times;</span>
+            <p>Your Score was: <span id="scoreModalResult"></span></p>
+            <button type="button" class="btn btn-light btn-lg btn-outline-dark" id="menu-button">Back to Menu</button>
+          </div>
+        </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="scripts/game.js"></script>

@@ -1,5 +1,4 @@
 
-
 const submitButton = document.getElementById("formSubmit");
 const quizParamForm = document.getElementById("quiz-param-form");
 const selectElements = document.querySelectorAll('select');
@@ -22,8 +21,15 @@ function allParamsSelected() {
   }
 
 
-submitButton.addEventListener("click", (e) => {
-    getAPIURL();
+submitButton.addEventListener("click", async (e) => {
+    e.preventDefault(); // Prevent default form submission behavior
+    try {
+      await getAPIURL();
+      window.location.href = "game.html"; // Redirect to game page after successful submission
+    } catch (error) {
+      console.error("Error:", error);
+      // Handle errors (e.g., display an error message to the user)
+    }
 });
 
 // generate a session token
@@ -53,21 +59,12 @@ async function getAPIURL(){
 
     let categoryID = setCategoryID(categoryChoice.value);
 
-    // for testing
-    console.log(noOfQuestions.value);
-    console.log(categoryChoice.value);
-    console.log(categoryID);
-    console.log(difficultyChoice.value);
-    console.log(quizTypeChoice.value);
-
     // Wait for session token
     const sessionToken = await getSessionToken(); // Await the promise
 
     // build the api url using the session token
     let API_URL = `https://opentdb.com/api.php?amount=${noOfQuestions.value}&category=${categoryID}&difficulty=${difficultyChoice.value}&type=${quizTypeChoice.value}&token=${sessionToken}`;
-    
-    console.log(sessionToken);
-    console.log(API_URL);
+
     
     const quizParams = {
         url: API_URL,
@@ -76,14 +73,11 @@ async function getAPIURL(){
         difficulty: difficultyChoice.value,
         quizType: quizTypeChoice.value 
       };
-      
 
     //set data into session storage
     localStorage.setItem("quizParams", JSON.stringify(quizParams));
-    // sessionStorage.setItem("API_URL", API_URL);
 
-    let retrieved = localStorage.getItem("quizParams");
-      console.log(retrieved);
+      return 0;
 };
 
 // assign the correct category ID based on category choice
