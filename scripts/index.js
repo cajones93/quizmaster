@@ -70,10 +70,12 @@ async function getAPIURL(){
     console.log(API_URL);
     
 
-    //set quiz data into local storage
+    //set data into local storage
     localStorage.setItem("API_URL", API_URL);
-    
-
+    localStorage.setItem("quizLength", noOfQuestions.value);
+    localStorage.setItem("quizCategory", categoryChoice.value);
+    localStorage.setItem("difficultyChoice", difficultyChoice.value);
+    localStorage.setItem("quizType", quizTypeChoice.value);
 };
 
 // assign the correct category ID based on category choice
