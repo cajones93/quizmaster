@@ -68,6 +68,7 @@ async function getAPIURL(){
     
     const quizParams = {
         url: API_URL,
+        token: sessionToken,
         quizLength: noOfQuestions.value,
         quizCategory: categoryChoice.value,
         difficulty: difficultyChoice.value,
