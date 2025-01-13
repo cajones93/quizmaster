@@ -185,7 +185,7 @@ async function setQuestionAndAnswers() {
   function showScore(){
     let resultText = document.getElementById("scoreModalResult");
     resultText.innerText = score;
-    scoreModal.style.display = "block"
+    scoreModal.style.display = "flex"
   }
 
  

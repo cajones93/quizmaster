@@ -16,14 +16,12 @@ body{
 
 /* HEADER */
 
-
 .header-container{
     display: flex;
     justify-content: center;
     width: 100%;
     height: 10%;
     text-align: center;
-    
 }
 
 .header-div{
@@ -38,6 +36,25 @@ body{
    width: 100%;
 
 }
+/* END OF HEADER */
+
+.score-container{
+    display: flex;
+    justify-content: center;
+    
+    width: 100%;
+    height: 10%;
+    
+    
+}
+
+.score-section{
+
+    border: 3px solid black;
+    border-radius: 15px;
+    padding: 20px;
+}
+
 
 /* FORM */
 
@@ -55,6 +72,7 @@ body{
     border-radius: 15px;
     margin: auto;
     padding: 10px;
+    background-color: #FFECDB;
 }
 
 #quiz-param-form select{
@@ -85,11 +103,43 @@ body{
     border-color: lightgrey;
     width: 40%;
 }
-
+/* END OF FORM */
 
 /* QUIZ */
-.container{
+.quiz-container{
     text-align: center;
+    height: 80%;
+}
+
+.question-container{
+    padding-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 15em;
+
+}
+
+#question{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 100%;
+    font-family: "Fjalla One", sans-serif;
+    letter-spacing: 1px;
+    overflow: auto;
+    border: 3px solid black;
+    border-radius: 15px;
+    padding: 10px;
+    background-color: white;
+}
+
+.quiz-container button{
+    width: 80%;
+    border: 1px solid #0074D9;
+    background-color: #BCE0FF;
 }
 
 .answer-col{
@@ -104,31 +154,32 @@ body{
 .hidden{
     display: none;
 }
-
+/* END OF QUIZ */
 
 /* Score Modal */
 
 /* The Modal (background) */
 #scoreModal {
-    display: none; /* Hidden by default */
+    display: flex; /* Hidden by default */
     z-index: 1; /* Sit on top */
-    width: 50%; /* Full width */
-    height: 30%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    width: 80%; /* Full width */
+    height: 20%; /* Full height */
+    
+    background-color: rgba(0,0,0,0.4); /* Black w/ transparency */
+    align-items: center;
   }
   
   /* Modal Content/Box */
   .scoreModal-content {
     background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
+    margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+    width: 80%;
     text-align: center;
   }
   
+
   /* The Close Button */
   .close {
     color: #aaa;
@@ -150,7 +201,7 @@ body{
     top: 50%;
     transform: translate(-50%, -50%);
   }
-
+/* END OF SCORE MODAL */
 
   /* MEDIA QUERIES */
 
@@ -159,9 +210,6 @@ body{
         width: 90%;
     }    
 
-    #noOfQuestions #questionSelection{
-        content: "Questions";
-    }
   }
 
   /* Tablet */

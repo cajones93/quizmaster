@@ -8,16 +8,22 @@
     <link rel="stylesheet" href="assets/css/style.css">
   </head>
   <body>
-    <div class="header-div">
-        <h1>Quizmaster</h1>
-        <h2>Score: <strong><span id="score"></span></strong></h2>
+    <!-- HEADER LOGO -->
+    <div class="header-container">
+      <div class="header-div">
+          <image id="logo-img" src="assets/images/quizmaster-logo-transparent.png">
+      </div>
+    </div>
+    <!-- SCORE -->
+    <div class="score-container hidden">
+      <h2 class="score-section">Score: <strong><span id="score"></span></strong></h2>
     </div>
         <!-- num of questions -->
-        <div class="container">
+        <div class="quiz-container">
             <div class="row">
-              <div class="col-sm-12">
-                <h1 class="text-center">Quiz Question</h1>
-                <div id="question"></div>
+              <div class="col-sm-12 question-container">
+                <h1 id="question" class="text-center">Welcome to the quiz!</h1>
+                
               </div>
             </div>
             <div class="row">
@@ -46,7 +52,7 @@
         <div id="scoreModal" class="modal center">
 
           <!-- Modal content -->
-          <div class="scoreModal-content center">
+          <div class="scoreModal-content">
             <span class="close">&times;</span>
             <p>Your Score was: <span id="scoreModalResult"></span></p>
             <button type="button" class="btn btn-light btn-lg btn-outline-dark" id="menu-button">Back to Menu</button>
