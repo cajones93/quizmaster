@@ -29,26 +29,41 @@ body  *{
 .header-div{
     display: block;
     text-align: center;
-    padding: 20px;
-    width: 80%;
+    padding: 10px;
+    width: 100%;
     height: 100%;
 }
 
 .header-div img{
    width: 100%;
-    background-color: #fff;
-    border-radius: 15px;
+
 }
 
 /* FORM */
 
+.form-container{
+    display:flex;
+    justify-content: center;
+    margin-top: 20px;
+
+}
+
 #quiz-param-form{
     text-align: center;
-    width: 60%;
-    border: solid 1px #000; 
+    width: 90%;
+    border: solid 5px #000; 
     border-radius: 15px;
     margin: auto;
+
     padding: 10px;
+}
+
+#quiz-param-form select{
+    font-size: 130%;
+}
+
+#quiz-param-form button{
+    background-color: #0074D9;
 }
 
 .form-header{
@@ -64,7 +79,7 @@ body  *{
 }
 
 #formSubmit{
-    width: 33%;
+    width: 60%;
     font-size: 150%;
 }
 
@@ -136,7 +151,6 @@ body  *{
 
   /* MEDIA QUERIES */
 
-  /* Tablet */
   @media (min-width:768px){
     #quiz-param-form{
         width: 90%;
@@ -146,3 +160,39 @@ body  *{
         content: "Questions";
     }
   }
+
+  /* Tablet */
+  @media (min-width:768px){
+    
+    .header-div img{
+        width: 90%;
+    }
+    
+    #quiz-param-form{
+        width: 90%;
+    }    
+
+    #quiz-param-form select{
+        font-size: 180%;
+    }
+
+
+
+  }
+
+    /* Laptop */
+    @media (min-width:1024px){
+
+        .header-div img{
+            width: 80%;
+        }
+
+        #quiz-param-form{
+            width: 70%;
+        }    
+    
+        #quiz-param-form select{
+            font-size: 180%;
+        }
+    
+      }
