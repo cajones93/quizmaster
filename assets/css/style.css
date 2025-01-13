@@ -1,7 +1,43 @@
+/* FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Cantarell:ital,wght@0,400;0,700;1,400;1,700&family=Fjalla+One&display=swap');
+
+/* BODY */
+
+body{
+    background-color: #FFFDF6;
+    font-family: "Cantarell", sans-serif;
+}
+
+
+/* CHECK OBJECT BOUNDARIES */
+body  *{
+    /* border: 1px solid red; */
+}
+
+/* HEADER */
+
+
+.header-container{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 10%;
+    text-align: center;
+    
+}
 
 .header-div{
+    display: block;
     text-align: center;
     padding: 20px;
+    width: 80%;
+    height: 100%;
+}
+
+.header-div img{
+   width: 100%;
+    background-color: #fff;
+    border-radius: 15px;
 }
 
 /* FORM */
@@ -17,6 +53,8 @@
 
 .form-header{
     margin-bottom: 15px;
+    font-family: "Fjalla One", sans-serif;
+    letter-spacing: 1px;
 }
 
 .form-select{
@@ -93,4 +131,18 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+  }
+
+
+  /* MEDIA QUERIES */
+
+  /* Tablet */
+  @media (min-width:768px){
+    #quiz-param-form{
+        width: 90%;
+    }    
+
+    #noOfQuestions #questionSelection{
+        content: "Questions";
+    }
   }

@@ -8,20 +8,21 @@
     <link rel="stylesheet" href="assets/css/style.css">
   </head>
   <body>
-    <div class="header-div">
-        <h1>Quizmaster</h1>
-        <h2>Let's get you started</h2>
+    <div class="header-container">
+        <div class="header-div">
+            <image id="logo-img" src="assets/images/quizmaster-logo-transparent.png">
+        </div>
     </div>
       <!-- FORM -->
       <form id="quiz-param-form" method="GET" action="game.html">
         <!-- num of questions -->
         <header>
-            <h1 class="form-header">Choose Your Quiz Parameters.</h1>
+            <h1 class="form-header">Choose Your Quiz Parameters</h1>
         </header>
             <div class="mb-3">
                 
                 <select id="noOfQuestions" class="form-select">
-                    <option selected>Select Number of Questions</option>
+                    <option selected id="questionSelection">Select Number of Questions</option>
                     <option value="5">5</option>
                     <option value="10">10</option>
                     <option value="25">25</option>
