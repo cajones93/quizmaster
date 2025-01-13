@@ -9,10 +9,10 @@ body{
 }
 
 
-/* CHECK OBJECT BOUNDARIES */
-body  *{
-    /* border: 1px solid red; */
-}
+/* CHECK OBJECT BOUNDARIES
+ body  *{
+    border: 1px solid red;
+} */
 
 /* HEADER */
 
@@ -45,7 +45,7 @@ body  *{
     display:flex;
     justify-content: center;
     margin-top: 20px;
-
+    margin-bottom: 20px;
 }
 
 #quiz-param-form{
@@ -54,16 +54,11 @@ body  *{
     border: solid 5px #000; 
     border-radius: 15px;
     margin: auto;
-
     padding: 10px;
 }
 
 #quiz-param-form select{
     font-size: 130%;
-}
-
-#quiz-param-form button{
-    background-color: #0074D9;
 }
 
 .form-header{
@@ -81,6 +76,14 @@ body  *{
 #formSubmit{
     width: 60%;
     font-size: 150%;
+    background-color: #0074D9;
+    transition: all ease 0.5s;
+}
+
+#formSubmit.disabled{
+    background-color: lightgrey;
+    border-color: lightgrey;
+    width: 40%;
 }
 
 
@@ -193,6 +196,20 @@ body  *{
     
         #quiz-param-form select{
             font-size: 180%;
+        }
+    
+      }
+
+    /* Laptop Large*/
+    @media (min-width:1440px){
+
+        .header-div img{
+            width: 70%;
+        }
+
+    
+        #quiz-param-form select, #quiz-param-form h1{
+            font-size: 300%;
         }
     
       }
