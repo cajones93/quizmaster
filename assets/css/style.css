@@ -12,6 +12,35 @@ body{
     background-size: 300%;
 }
 
+#loading-div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+    top: 0px;
+    left: 0px;
+    background-color: black;
+    background-image: url("../images/bg-img.jpg");
+    text-align: center;
+}
+
+.loading-spinner{
+    height: 10rem;
+    width: 10rem;
+    padding: 30px;
+}
+
+.loading-text{
+    font-size: 300%;
+}
+
+.small-text{
+    font-size: 150%;
+}
 
 /* CHECK OBJECT BOUNDARIES
  body  *{
@@ -161,15 +190,18 @@ body{
 }
 
 .hidden{
-    display: none;
+    display: none !important;
 }
+
+
 /* END OF QUIZ */
 
-/* Score Modal */
-
-/* The Modal (background) */
+/* MODALS */
 
 
+.score-modal-footer{
+    justify-content: center;
+}
 
 
 /* Error Modal */
@@ -187,7 +219,7 @@ body{
 }
 
 
-/* END OF SCORE MODAL */
+/* END OF MODALS */
 
   /* MEDIA QUERIES */
 
@@ -249,3 +281,5 @@ body{
         }
     
       }
+
+      /* END OF MEDIA QUERIES */

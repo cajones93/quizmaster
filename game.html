@@ -14,6 +14,13 @@
           <image id="logo-img" src="assets/images/quizmaster-logo-transparent.png">
       </div>
     </div>
+    <div id="loading-div" class="hidden">
+      <div class="spinner-grow loading-spinner" role="status">
+      </div>
+      <br>
+      <span class="sr-only loading-text"><strong>LOADING</strong><br></span><span class="small-text">YOUR QUIZ IS LOADING</span>
+    </div>
+
     <!-- SCORE -->
     <div id="current-question-container" class="container">
       <h2 class="current-question-section">Question: <strong><span id="questionNo"></span></strong> of <span id="totalQuestions"></span></h2>
@@ -61,7 +68,7 @@
                       <div id="scoreModal-body" class="modal-body">
                         <!-- Insert score in JS -->
                       </div>
-                      <div class="modal-footer">
+                      <div class="modal-footer score-modal-footer">
                         <button type="button" class="btn btn-secondary" onclick="returnToHome()">Back to Menu</button>
                       </div>
                     </div>
