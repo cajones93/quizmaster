@@ -25,6 +25,7 @@ const menuBtn = document.getElementById("menu-button");
 const scoreModalBody = document.getElementById("scoreModal-body");
 
 // Current question text
+const currentQuestionContainer = document.getElementById("current-question-container");
 const totalQuestions = document.getElementById("totalQuestions");
 const questionNoText = document.getElementById("questionNo");
 
@@ -181,6 +182,7 @@ async function setQuestionAndAnswers() {
       return 0;
     }
     
+    currentQuestionContainer.style.display = "flex";
     questionNoText.innerText = questionNo + 1;
 
     currentQuestion = quizQuestions[questionNo];
