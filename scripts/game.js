@@ -32,6 +32,21 @@ const questionNoText = document.getElementById("questionNo");
 // Error Modal
 const errorModal = document.getElementById("errorModalRC4");
 
+const loadingDiv = document.getElementById("loading-div");
+
+// stop keyboard commands
+window.onload = function() {
+  
+  setInterval(loadingFinished, 3000);
+  console.log("interval set");
+};
+
+function loadingFinished(){
+  loadingDiv.classList.add("hidden");
+
+  clearInterval(loadingDiv);
+  console.log("interval removed");
+}
 
 
 // go back to the index page and clear local storage
