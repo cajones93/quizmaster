@@ -6,6 +6,10 @@
 body{
     background-color: #FFFDF6;
     font-family: "Cantarell", sans-serif;
+    background-image: url("../images/bg-img.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 300%;
 }
 
 
@@ -109,6 +113,7 @@ body{
 .quiz-container{
     text-align: center;
     height: 80%;
+
 }
 
 .question-container{
@@ -213,16 +218,14 @@ body{
 
   /* MEDIA QUERIES */
 
+  /* Tablet */
   @media (min-width:768px){
+
     #quiz-param-form{
         width: 90%;
     }    
 
-  }
 
-  /* Tablet */
-  @media (min-width:768px){
-    
     .header-div img{
         width: 90%;
     }
@@ -241,6 +244,10 @@ body{
 
     /* Laptop */
     @media (min-width:1024px){
+
+        body{
+            background-size: 120%;
+        }
 
         .header-div img{
             width: 80%;
