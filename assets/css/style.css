@@ -160,7 +160,7 @@ body{
 
 /* The Modal (background) */
 #scoreModal {
-    display: flex; /* Hidden by default */
+    display: none; /* Hidden by default */
     z-index: 1; /* Sit on top */
     width: 80%; /* Full width */
     height: 20%; /* Full height */
@@ -201,6 +201,15 @@ body{
     top: 50%;
     transform: translate(-50%, -50%);
   }
+
+/* Error Modal */
+
+#errorModalRC4{
+    /* display: "flex"; */
+    z-index: 1;
+}
+
+
 /* END OF SCORE MODAL */
 
   /* MEDIA QUERIES */

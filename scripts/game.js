@@ -23,16 +23,36 @@ const scoreModal = document.getElementById("scoreModal");
 const scoreModalClose = document.getElementsByClassName("close")[0];
 const menuBtn = document.getElementById("menu-button");
 
+// Error Modal
+const errorModal = document.getElementById("errorModalRC4");
 
 // Score modal functions
 scoreModalClose.onclick = function() {
     scoreModal.style.display = "none";
   }
-menuBtn.onclick = function() {
+
+menuBtn.onclick = returnToHome;
+
+// go back to the index page and clear local storage
+  function returnToHome(){
     window.location.href = "index.html";
     localStorage.clear();
   }
 
+
+  function getParams(){
+    // retrieve quiz data from local storage
+    let quizParams = JSON.parse(localStorage.getItem('quizParams'));
+
+    // set the parameters
+    sessionToken = quizParams.token;
+    quizLength = quizParams.quizLength;
+    quizCategory = quizParams.quizCategory;
+    difficulty = quizParams.difficulty;
+    quizType = quizParams.quizType;
+
+    return quizParams;
+}
 
 async function getData(API_URL) {
   const queryString = `${API_URL}`;
@@ -45,19 +65,33 @@ async function getData(API_URL) {
 
   const data = await response.json();
 
+  console.log("response code: ", data.response_code);
 //   if session token needs to be reset, reset it and call this function again
-  if(data.response_code === "4"){
-    const resetResponse = await fetch(tokenResetURL + token);
-    if (!resetResponse.ok) {
-        throw new Error(`Error resetting session token! status: ${resetResponse.status}`);
-      }
-      // call function again to get data
-    return getData(API_URL);
+  if(data.response_code === 4){
+    console.log("RC4 Error");
+    errorModal.classList.add("show");
+    errorModal.style.display = "block";
   }
   else {
     // not response code 4
     return data;
   }
+}
+
+
+async function refreshToken(){
+    console.log("RC4Error called");
+    const resetResponse = await fetch((tokenResetURL + sessionToken), {
+      method: "POST"
+    });
+    console.log(`Token reset successful!"
+      URL: ${tokenResetURL}${sessionToken}`);
+    errorModal.style.display = ('none'); // automatically close modal
+
+    if (!resetResponse.ok) {
+        throw new Error(`Error resetting session token! status: ${resetResponse.status}`);
+      }
+      return 0;
 }
 
 // Initial event listeners
@@ -80,19 +114,7 @@ function changeButtons(quizType){
 }
 
 
-function getParams(){
-        // retrieve quiz data from local storage
-        let quizParams = JSON.parse(localStorage.getItem('quizParams'));
 
-        // set the parameters
-        sessionToken = quizParams.token;
-        quizLength = quizParams.quizLength;
-        quizCategory = quizParams.quizCategory;
-        difficulty = quizParams.difficulty;
-        quizType = quizParams.quizType;
-
-        return quizParams;
-}
 
 async function startGame(){
     //get quiz parameters
@@ -185,7 +207,8 @@ async function setQuestionAndAnswers() {
   function showScore(){
     let resultText = document.getElementById("scoreModalResult");
     resultText.innerText = score;
-    scoreModal.style.display = "flex"
+    scoreModal.style.display = "flex";
   }
+
 
  
