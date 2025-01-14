@@ -26,6 +26,8 @@ body{
     width: 100%;
     height: 10%;
     text-align: center;
+    margin-top: 15px;
+    margin-bottom: 30px;
 }
 
 .header-div{
@@ -42,17 +44,17 @@ body{
 }
 /* END OF HEADER */
 
-.score-container{
+.current-question-container{
     display: flex;
-    justify-content: center;
-    
+    justify-content: right;
+
     width: 100%;
     height: 10%;
     
     
 }
 
-.score-section{
+.current-question-section{
 
     border: 3px solid black;
     border-radius: 15px;
@@ -164,53 +166,22 @@ body{
 /* Score Modal */
 
 /* The Modal (background) */
-#scoreModal {
-    display: none; /* Hidden by default */
-    z-index: 1; /* Sit on top */
-    width: 80%; /* Full width */
-    height: 20%; /* Full height */
-    
-    background-color: rgba(0,0,0,0.4); /* Black w/ transparency */
-    align-items: center;
-  }
-  
-  /* Modal Content/Box */
-  .scoreModal-content {
-    background-color: #fefefe;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    text-align: center;
-  }
-  
 
-  /* The Close Button */
-  .close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-  }
-  
-  .close:hover,
-  .close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-  }
 
-  .center {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-  }
+
 
 /* Error Modal */
 
 .modal-header{
     justify-content: space-between;
+}
+
+.modal-title{
+    margin-left: 45%;
+}
+
+.modal-body{
+    text-align: center;
 }
 
 

@@ -10,7 +10,7 @@ let quizQuestions;
 let tokenResetURL = "https://opentdb.com/api_token.php?command=reset&token=";
 
 
-let scoreText = document.getElementById("score");
+// let scoreText = document.getElementById("score");
 let question = document.getElementById("question");
 // answer buttons
 let answer1Btn = document.getElementById("answer1");
@@ -22,16 +22,16 @@ const answer4Btn = document.getElementById("answer4");
 const scoreModal = document.getElementById("scoreModal");
 const scoreModalClose = document.getElementsByClassName("close")[0];
 const menuBtn = document.getElementById("menu-button");
+const scoreModalBody = document.getElementById("scoreModal-body");
+
+// Current question text
+const totalQuestions = document.getElementById("totalQuestions");
+const questionNoText = document.getElementById("questionNo");
 
 // Error Modal
 const errorModal = document.getElementById("errorModalRC4");
 
-// Score modal functions
-scoreModalClose.onclick = function() {
-    scoreModal.style.display = "none";
-  }
 
-menuBtn.onclick = returnToHome;
 
 // go back to the index page and clear local storage
   function returnToHome(){
@@ -144,6 +144,10 @@ async function startGame(){
     // add new listeners to check if answer is correct and change question and answers
     addButtonListeners();
 
+    console.log("totalQuestions = ", totalQuestions);
+    totalQuestions.innerText = quizLength;
+
+
     // Call setQuestionAndAnswers after defining it
     setQuestionAndAnswers(); 
 }
@@ -172,9 +176,13 @@ function decodeHtml(html) {
 async function setQuestionAndAnswers() {
     // After final question
     if (questionNo >= quizLength){
+
         showScore();
+      return 0;
     }
     
+    questionNoText.innerText = questionNo + 1;
+
     currentQuestion = quizQuestions[questionNo];
 
     console.log("current question: ", currentQuestion);
@@ -199,15 +207,27 @@ async function setQuestionAndAnswers() {
     answer3Btn.innerHTML = allAnswers[2];
     answer4Btn.innerHTML = allAnswers[3];
   
-    scoreText.innerText = score;
     questionNo++;
   }
 
+  function calculateScorePercent(score){
+    if(score === 0){
+      return "0.00";
+    }
+    let scorePercent = parseFloat((score / quizLength) * 100).toFixed(2);
+
+    return scorePercent;
+  }
 
   function showScore(){
-    let resultText = document.getElementById("scoreModalResult");
-    resultText.innerText = score;
-    scoreModal.style.display = "flex";
+
+    scorePercent = calculateScorePercent(score);
+    scoreModalBody.innerText = `Your score was: ${score}.
+    That is a percentage of: ${scorePercent}%!`;
+
+    console.log(scorePercent);
+    scoreModal.classList.add("show");
+    scoreModal.style.display = "block";
   }
 
 
