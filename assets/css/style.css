@@ -23,8 +23,7 @@ body{
     z-index: 2;
     top: 0px;
     left: 0px;
-    background-color: black;
-    background-image: url("../images/bg-img.jpg");
+    background-color: #ebebeb;
     text-align: center;
 }
 
