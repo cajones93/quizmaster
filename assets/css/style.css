@@ -204,9 +204,8 @@ body{
 
 /* Error Modal */
 
-#errorModalRC4{
-    /* display: "flex"; */
-    z-index: 1;
+.modal-header{
+    justify-content: space-between;
 }
 
 
