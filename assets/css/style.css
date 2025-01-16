@@ -122,6 +122,7 @@ option{
 }
 
 .form-header{
+    padding: 10px;
     margin-bottom: 15px;
     font-family: "Fjalla One", sans-serif;
     letter-spacing: 1px;
