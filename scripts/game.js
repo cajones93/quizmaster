@@ -37,15 +37,12 @@ const loadingDiv = document.getElementById("loading-div");
 // stop keyboard commands
 window.onload = function() {
   
-  setInterval(loadingFinished, 3000);
+  setTimeout(loadingFinished, 3000);
   console.log("interval set");
 };
 
 function loadingFinished(){
   loadingDiv.classList.add("hidden");
-
-  clearInterval(loadingDiv);
-  console.log("interval removed");
 }
 
 
@@ -211,18 +208,25 @@ async function setQuestionAndAnswers() {
     
 
 
-    // Shuffle the answers array using Durstenfeld shuffle algorithm
-    for (let i = allAnswers.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [allAnswers[i], allAnswers[j]] = [allAnswers[j], allAnswers[i]];
-    }
-
-  
+    // Shuffle the answers array if multiple choice
+    if (quizType === "multiple"){
+      for (let i = allAnswers.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [allAnswers[i], allAnswers[j]] = [allAnswers[j], allAnswers[i]];
+      }
     // Assign answers to buttons
-    answer1Btn.innerHTML = allAnswers[0];
-    answer2Btn.innerHTML = allAnswers[1];
-    answer3Btn.innerHTML = allAnswers[2];
-    answer4Btn.innerHTML = allAnswers[3];
+      answer1Btn.innerHTML = allAnswers[0];
+      answer2Btn.innerHTML = allAnswers[1];
+      answer3Btn.innerHTML = allAnswers[2];
+      answer4Btn.innerHTML = allAnswers[3];
+    }
+    else{
+      // If true / false, keep in same positions
+      answer1Btn.innerHTML = "True";
+      answer2Btn.innerHTML = "False";
+    }
+  
+
   
     questionNo++;
   }

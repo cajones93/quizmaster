@@ -31,10 +31,12 @@ body{
     height: 10rem;
     width: 10rem;
     padding: 30px;
+    background-color: #5056BF;
 }
 
 .loading-text{
     font-size: 300%;
+    color: #5056BF;
 }
 
 .small-text{
