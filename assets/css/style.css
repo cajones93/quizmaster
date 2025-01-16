@@ -52,24 +52,23 @@ body{
     display: flex;
     justify-content: center;
     width: 100%;
-    height: 10%;
+    height: 6em;
     text-align: center;
-    margin-top: 15px;
-    margin-bottom: 30px;
+    padding: 8px;
 }
 
 .header-div{
     display: block;
     text-align: center;
     padding: 10px;
-    width: 100%;
     height: 100%;
+    width: 100%;
+    background-image: url(../images/quizmaster-logo-transparent-1440.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
-.header-div img{
-   width: 100%;
-
-}
 /* END OF HEADER */
 
 #current-question-container{
@@ -222,16 +221,24 @@ body{
 
   /* MEDIA QUERIES */
 
+  @media (min-width:425px){
+    .header-container{
+        height: 8em;
+        padding: 10px;
+    }
+  }
+
   /* Tablet */
   @media (min-width:768px){
+
 
     #quiz-param-form{
         width: 90%;
     }    
 
 
-    .header-div img{
-        width: 90%;
+    .header-div{
+        background-image: url(../images/quizmaster-logo-transparent-tablet.png);
     }
     
     #quiz-param-form{
@@ -253,8 +260,13 @@ body{
             background-size: 120%;
         }
 
-        .header-div img{
+        .header-container{
+            height: 10em;
+        }
+
+        .header-div {
             width: 80%;
+            background-image: url(../images/quizmaster-logo-transparent-1024.png);
         }
 
         #quiz-param-form{
@@ -270,8 +282,13 @@ body{
     /* Laptop Large*/
     @media (min-width:1440px){
 
-        .header-div img{
+        .header-container{
+            height: 12em;
+        }
+
+        .header-div{
             width: 70%;
+            background-image: url(../images/quizmaster-logo-transparent-1440.png);
         }
 
     
