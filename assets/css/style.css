@@ -10,6 +10,11 @@ body{
     background-position: center;
     background-repeat: no-repeat;
     background-size: 300%;
+    
+}
+
+.row, .container{
+    --bs-gutter-x: 0;
 }
 
 #loading-div{
@@ -43,10 +48,6 @@ body{
     font-size: 150%;
 }
 
-/* CHECK OBJECT BOUNDARIES
- body  *{
-    border: 1px solid red;
-} */
 
 /* HEADER */
 
@@ -144,7 +145,6 @@ body{
 /* QUIZ */
 .quiz-container{
     text-align: center;
-    height: 80%;
 
 }
 
@@ -176,8 +176,8 @@ body{
 
 .answer-button{
     width: 80%;
-    height: 3em;
-    font-size: 150%;
+    height: 4em;
+    font-size: 120%;
     font-weight: bold;
     background-color: #f3f7fe;
     color: #030A8C;
@@ -186,6 +186,8 @@ body{
     border-radius: 15px;
     transition: 0.3s;
     margin: 10px 5px;
+    padding: 10px;
+
 }
 
 .answer-button:hover{
@@ -198,11 +200,6 @@ body{
 
 .answer-col{
     justify-items: center;
-}
-
-.answer-button{
-    padding: 10px;
-    margin: 5px;
 }
 
 .hidden{
@@ -254,6 +251,10 @@ body{
         width: 90%;
     }    
 
+    .answer-button{
+        font-size: 150%;
+        height: 3em;
+    }
 
     .header-div{
         background-image: url(../images/quizmaster-logo-transparent-tablet.png);
@@ -287,6 +288,14 @@ body{
             background-image: url(../images/quizmaster-logo-transparent-1024.png);
         }
 
+        .answer-button{
+            font-size: 180%;
+        }
+
+        .question-container{
+            height: 13em;
+        }
+
         #quiz-param-form{
             width: 70%;
         }    
@@ -309,7 +318,10 @@ body{
             background-image: url(../images/quizmaster-logo-transparent-1440.png);
         }
 
-    
+        .answer-button{
+            font-size: 220%;
+        }
+
         #quiz-param-form select, #quiz-param-form h1{
             font-size: 300%;
         }

@@ -81,7 +81,7 @@ async function getData(API_URL) {
   console.log("response code: ", data.response_code);
 //   if session token needs to be reset, reset it and call this function again
   if(data.response_code === 4){
-    console.log("RC4 Error");
+    console.log("Response Code 4 Error");
     errorModal.classList.add("show");
     errorModal.style.display = "block";
   }
@@ -93,7 +93,7 @@ async function getData(API_URL) {
 
 
 async function refreshToken(){
-    console.log("RC4Error called");
+    console.log("Response Code 4 Error called");
     const resetResponse = await fetch((tokenResetURL + sessionToken), {
       method: "POST"
     });
