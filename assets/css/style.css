@@ -106,7 +106,7 @@ body{
     border-radius: 15px;
     margin: auto;
     padding: 10px;
-    background-color: #FFECDB;
+    background-color: #BCBBF2;
 }
 
 #quiz-param-form select{
@@ -172,11 +172,27 @@ body{
     background-color: white;
 }
 
-.quiz-container button{
+.answer-button{
     width: 80%;
-    border: 1px solid #0074D9;
-    background-color: #BCE0FF;
+    height: 3em;
+    font-size: 150%;
+    font-weight: bold;
+    background-color: #f3f7fe;
+    color: #030A8C;
+    border: none;
+    cursor: pointer;
+    border-radius: 15px;
+    transition: 0.3s;
+    margin: 10px 5px;
 }
+
+.answer-button:hover{
+    background-color: #030A8C;
+    border: none;
+    box-shadow: 0 0 0 5px #BCBBF2;
+    color: #fff;
+}
+
 
 .answer-col{
     justify-items: center;
