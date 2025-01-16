@@ -114,6 +114,11 @@ body{
 
 #quiz-param-form select{
     font-size: 130%;
+    padding: 20px;
+}
+
+option{
+    max-width: 100%;
 }
 
 .form-header{
