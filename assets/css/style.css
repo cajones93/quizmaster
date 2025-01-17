@@ -160,7 +160,7 @@ option{
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 15em;
+    height: 8em;
     margin-bottom: 20px;
 
 }
@@ -178,6 +178,7 @@ option{
     border-radius: 15px;
     padding: 10px;
     background-color: white;
+    font-size: 110%;
 }
 
 .answer-button{
@@ -308,6 +309,10 @@ option{
 
         .question-container{
             height: 13em;
+        }
+
+        #question{
+            font-size: 200%;
         }
 
         #quiz-param-form{

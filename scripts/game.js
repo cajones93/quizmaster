@@ -6,6 +6,8 @@ let score = 0;
 let currentQuestion;
 let quizQuestions;
 
+
+
 // URL to reset session token (add session token after)
 let tokenResetURL = "https://opentdb.com/api_token.php?command=reset&token=";
 
@@ -20,7 +22,7 @@ const answer4Btn = document.getElementById("answer4");
 
 // Score Modal
 const scoreModal = document.getElementById("scoreModal");
-const scoreModalClose = document.getElementsByClassName("close")[0];
+const scoreModalClose = document.getElementById("scoreModalClose");
 const menuBtn = document.getElementById("menu-button");
 const scoreModalBody = document.getElementById("scoreModal-body");
 
@@ -31,6 +33,7 @@ const questionNoText = document.getElementById("questionNo");
 
 // Error Modal
 const errorModal = document.getElementById("errorModalRC4");
+const errorModalClose = document.getElementById("errorModalClose");
 
 const loadingDiv = document.getElementById("loading-div");
 
@@ -44,14 +47,6 @@ window.onload = function() {
 function loadingFinished(){
   loadingDiv.classList.add("hidden");
 }
-
-
-// go back to the index page and clear local storage
-  function returnToHome(){
-    window.location.href = "index.html";
-    localStorage.clear();
-  }
-
 
   function getParams(){
     // retrieve quiz data from local storage
@@ -84,12 +79,14 @@ async function getData(API_URL) {
     console.log("Response Code 4 Error");
     errorModal.classList.add("show");
     errorModal.style.display = "block";
+    errorModalClose.addEventListener("click", goToHomepage);
   }
   else {
     // not response code 4
     return data;
   }
 }
+
 
 
 async function refreshToken(){
@@ -113,6 +110,7 @@ answer2Btn.addEventListener("click", goToHomepage);
 
 function goToHomepage(){
     window.location.href = "index.html"; 
+    localStorage.clear();
 }
 
 function changeButtons(quizType){
@@ -249,6 +247,8 @@ async function setQuestionAndAnswers() {
     console.log(scorePercent);
     scoreModal.classList.add("show");
     scoreModal.style.display = "block";
+
+    scoreModalClose.addEventListener("click", goToHomepage);
   }
 
 
