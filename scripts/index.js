@@ -8,7 +8,7 @@ const selectElements = document.querySelectorAll('select');
 selectElements.forEach(select => {
     select.addEventListener("change", () => {
       if (allParamsSelected()) {
-        submitButton.classList.remove("disabled"); 
+          submitButton.classList.remove("disabled"); 
       } else {
         submitButton.classList.add("disabled"); 
       }
@@ -62,6 +62,15 @@ async function getAPIURL(){
     // Wait for session token
     const sessionToken = await getSessionToken(); // Await the promise
 
+
+    if(categoryChoice.value === "music" && difficultyChoice.value === "hard" && quizTypeChoice.value === "boolean"){
+      difficultyChoice.value = "medium";
+    }
+    if(categoryChoice.value === "scienceAndNature" && difficultyChoice.value === "hard" && quizTypeChoice.value === "boolean"){
+      difficultyChoice.value = "medium";
+    }
+
+
     // build the api url using the session token
     let API_URL = `https://opentdb.com/api.php?amount=${noOfQuestions.value}&category=${categoryID}&difficulty=${difficultyChoice.value}&type=${quizTypeChoice.value}&token=${sessionToken}`;
 
@@ -83,8 +92,8 @@ async function getAPIURL(){
 
 // assign the correct category ID based on category choice
 function setCategoryID (categoryChoice){
-    if(categoryChoice === "scienceAndNature"){
-        return 17;
+    if(categoryChoice === "generalKnowledge"){
+        return 9;
     }
     else if(categoryChoice === "videoGames"){
         return 15;
@@ -92,7 +101,7 @@ function setCategoryID (categoryChoice){
     else if(categoryChoice === "music"){
         return 12;
     }
-    else if(categoryChoice === "film"){
-        return 11;
+    else if(categoryChoice === "scienceAndNature"){
+        return 17;
     }
 }

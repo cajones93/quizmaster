@@ -73,7 +73,7 @@ async function getData(API_URL) {
   const data = await response.json();
 
   console.log("response code: ", data.response_code);
-//   if session token needs to be reset, reset it and call this function again
+//   if session token needs to be reset, call the error modal
   if(data.response_code === 4){
     console.log("Response Code 4 Error");
     errorModal.classList.add("show");
