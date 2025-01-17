@@ -223,12 +223,13 @@ body{
 /* MODALS */
 
 .modal-content{
-    height: 15em;
+    height: 18em;
     font-size: 150%;
 }
 
 .score-modal-footer{
     justify-content: center;
+    padding: unset;
 }
 
 .small-modal-text{

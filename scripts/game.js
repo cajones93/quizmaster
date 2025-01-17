@@ -239,8 +239,10 @@ async function setQuestionAndAnswers() {
   function showScore(){
 
     scorePercent = calculateScorePercent(score);
-    scoreModalBody.innerHTML = `Your score was: <strong>${score}</strong>
+    scoreModalBody.innerHTML = `Score: <strong>${score}</strong>
+    <br>
     Percentage: <strong>${scorePercent}%</strong>
+    <br>
     <br>
     <span class="small-modal-text">Click the button below to return to the menu</span>`;
 
