@@ -96,7 +96,7 @@ async function refreshToken(){
     });
     console.log(`Token reset successful!"
       URL: ${tokenResetURL}${sessionToken}`);
-    errorModal.style.display = ('none'); // automatically close modal
+    errorModal.style.display = "none"; // automatically close modal
 
     if (!resetResponse.ok) {
         throw new Error(`Error resetting session token! status: ${resetResponse.status}`);
