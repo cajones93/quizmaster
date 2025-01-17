@@ -110,7 +110,7 @@ body{
     border-radius: 15px;
     margin: auto;
     padding: 10px;
-    background-color: #BCBBF2;
+    background-color: #F2F2F2;
 }
 
 .form-select{
@@ -140,13 +140,13 @@ body{
 #formSubmit{
     width: 60%;
     font-size: 110%;
-    background-color: #0074D9;
+    background-color: #5056BF;
     transition: all ease 0.5s;
 }
 
 #formSubmit.disabled{
-    background-color: lightgrey;
-    border-color: lightgrey;
+    background-color: #BCBBF2;
+    border-color: #BCBBF2;
     width: 40%;
 }
 /* END OF FORM */
@@ -190,7 +190,7 @@ body{
     font-size: 80%;
     font-weight: bold;
     background-color: #f3f7fe;
-    color: #030A8C;
+    color: #5056BF;
     border: none;
     cursor: pointer;
     border-radius: 15px;
@@ -317,6 +317,8 @@ body{
 
     #formSubmit{
         font-size: 180%;
+        background-color: #5056BF;
+        border-color: #5056BF;
     }
 
     .modal-title{
