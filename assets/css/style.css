@@ -112,20 +112,18 @@ body{
     background-color: #BCBBF2;
 }
 
-#quiz-param-form select{
-    font-size: 130%;
-    padding: 20px;
+.form-select{
+    font-size: 100%;
+    padding: 10px;
 }
 
-option{
-    max-width: 100%;
-}
 
 .form-header{
     padding: 10px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     font-family: "Fjalla One", sans-serif;
     letter-spacing: 1px;
+    font-size: 100%;
 }
 
 .form-select{
@@ -134,9 +132,13 @@ option{
     padding: 10px;
 }
 
+.mb-3{
+    margin-bottom: 0.5rem !important;
+}
+
 #formSubmit{
     width: 60%;
-    font-size: 150%;
+    font-size: 110%;
     background-color: #0074D9;
     transition: all ease 0.5s;
 }
@@ -253,10 +255,17 @@ option{
   /* Tablet */
   @media (min-width:768px){
 
+    .mb-3{
+        margin-bottom: 1rem !important;
+    }
 
     #quiz-param-form{
         width: 90%;
     }    
+
+    .form-header{
+        font-size: 200%;
+    }
 
     .answer-button{
         font-size: 150%;
@@ -271,7 +280,12 @@ option{
         width: 90%;
     }    
 
-    #quiz-param-form select{
+    .form-select{
+        font-size: 180%;
+
+    }
+
+    #formSubmit{
         font-size: 180%;
     }
   }
@@ -319,7 +333,7 @@ option{
             width: 70%;
         }    
     
-        #quiz-param-form select{
+        .form-select{
             font-size: 180%;
         }
     
@@ -341,10 +355,11 @@ option{
             font-size: 220%;
         }
 
-        #quiz-param-form select, #quiz-param-form h1{
+        .form-select, .form-header, #formSubmit{
             font-size: 300%;
         }
     
+
       }
 
       /* END OF MEDIA QUERIES */
