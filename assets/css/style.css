@@ -6,10 +6,10 @@
 body{
     background-color: #FFFDF6;
     font-family: "Cantarell", sans-serif;
-    background-image: url("../images/bg-img.jpg");
+    background-image: url("../images/bg-img-mobile.jpg");
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 300%;
+    background-size: 200%;
     
 }
 
@@ -266,6 +266,12 @@ body{
   /* Tablet */
   @media (min-width:768px){
 
+
+    body{
+            
+        background-size: 100%;
+    }
+
     .mb-3{
         margin-bottom: 1rem !important;
     }
@@ -351,7 +357,9 @@ body{
     @media (min-width:1024px){
 
         body{
-            background-size: 120%;
+            background-image: url(../images/bg-img-lg.jpg);
+            background-position: center;
+            background-size: 100%;
         }
 
         .header-container{
