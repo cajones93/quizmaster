@@ -273,12 +273,20 @@ option{
     #quiz-param-form select{
         font-size: 180%;
     }
-
-
-
   }
 
-    /* Laptop */
+    /* Laptop 1280*/
+
+    .answer-button{
+        margin: 5px;
+        height: 2.5em;
+    }
+
+    .question-container{
+        margin-bottom: 5px;
+    }
+
+    /* Desktop 1024*/
     @media (min-width:1024px){
 
         body{
@@ -312,7 +320,7 @@ option{
     
       }
 
-    /* Laptop Large*/
+    /* Desktop Large 1440*/
     @media (min-width:1440px){
 
         .header-container{
