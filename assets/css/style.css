@@ -222,11 +222,18 @@ body{
 
 /* MODALS */
 
+.modal-content{
+    height: 15em;
+    font-size: 150%;
+}
 
 .score-modal-footer{
     justify-content: center;
 }
 
+.small-modal-text{
+    font-size: 80%;
+}
 
 /* Error Modal */
 
@@ -240,6 +247,7 @@ body{
 
 .modal-body{
     text-align: center;
+    font-size: 80%
 }
 
 
@@ -309,6 +317,20 @@ body{
     #formSubmit{
         font-size: 180%;
     }
+
+    .modal-title{
+        font-size: 150%;
+    }
+
+    .modal-body{
+        font-size: 130%;
+    }
+
+    .modal-footer > button{
+        font-size: 120%;
+        justify-content: space-around;
+    }
+
   }
 
     /* Laptop 1280*/

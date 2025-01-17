@@ -38,8 +38,7 @@ const errorModalClose = document.getElementById("errorModalClose");
 const loadingDiv = document.getElementById("loading-div");
 
 // stop keyboard commands
-window.onload = function() {
-  
+window.onload = function setLoading() {
   setTimeout(loadingFinished, 3000);
   console.log("interval set");
 };
@@ -88,7 +87,6 @@ async function getData(API_URL) {
 }
 
 
-
 async function refreshToken(){
     console.log("Response Code 4 Error called");
     const resetResponse = await fetch((tokenResetURL + sessionToken), {
@@ -96,8 +94,8 @@ async function refreshToken(){
     });
     console.log(`Token reset successful!"
       URL: ${tokenResetURL}${sessionToken}`);
-    errorModal.style.display = "none"; // automatically close modal
-
+      // reload the page to show loading div and avoid too many api calls
+      location.reload();
     if (!resetResponse.ok) {
         throw new Error(`Error resetting session token! status: ${resetResponse.status}`);
       }
@@ -241,8 +239,10 @@ async function setQuestionAndAnswers() {
   function showScore(){
 
     scorePercent = calculateScorePercent(score);
-    scoreModalBody.innerText = `Your score was: ${score}.
-    That is a percentage of: ${scorePercent}%!`;
+    scoreModalBody.innerHTML = `Your score was: <strong>${score}</strong>
+    Percentage: <strong>${scorePercent}%</strong>
+    <br>
+    <span class="small-modal-text">Click the button below to return to the menu</span>`;
 
     console.log(scorePercent);
     scoreModal.classList.add("show");
