@@ -90,7 +90,7 @@ async function getData(API_URL) {
 async function refreshToken(){
     console.log("Response Code 4 Error called");
     const resetResponse = await fetch((tokenResetURL + sessionToken), {
-      method: "POST"
+      method: "GET"
     });
     console.log(`Token reset successful!"
       URL: ${tokenResetURL}${sessionToken}`);
