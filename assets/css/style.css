@@ -148,6 +148,7 @@ body{
     background-color: #BCBBF2;
     border-color: #BCBBF2;
     width: 40%;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 /* END OF FORM */
 
