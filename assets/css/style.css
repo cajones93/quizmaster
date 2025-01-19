@@ -269,7 +269,7 @@ body{
 
     body{
             
-        background-size: 100%;
+        background-size: 110%;
     }
 
     .mb-3{
@@ -359,7 +359,7 @@ body{
         body{
             background-image: url(../images/bg-img-lg.jpg);
             background-position: center;
-            background-size: 100%;
+            background-size: 120%;
         }
 
         .header-container{
