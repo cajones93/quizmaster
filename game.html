@@ -13,28 +13,34 @@
   <body>
     <!-- HEADER LOGO -->
     <div class="header-container">
-      <div class="header-div">
+      <div class="header-div" title="Quizmaster">
       </div>
     </div>
-    <div id="loading-div">
-      <div class="spinner-grow loading-spinner" role="status">
+    <section>
+      <div id="loading-div">
+        <div class="spinner-grow loading-spinner" role="status">
+        </div>
+        <br>
+        <span class="sr-only loading-text" aria-label="loading"><strong>LOADING</strong><br></span><span class="small-text">YOUR QUIZ IS LOADING</span>
       </div>
-      <br>
-      <span class="sr-only loading-text" aria-label="loading"><strong>LOADING</strong><br></span><span class="small-text">YOUR QUIZ IS LOADING</span>
-    </div>
-
-    <!-- SCORE -->
-    <div id="current-question-container" class="container">
-      <h2 class="current-question-section">Question: <strong><span id="questionNo"></span></strong> of <span id="totalQuestions"></span></h2>
-    </div>
-        <!-- num of questions -->
+    </section> 
+    <!-- Question number -->
+    <section>
+      <div id="current-question-container" class="container">
+        <h2 class="current-question-section">Question: <strong><span id="questionNo"></span></strong> of <span id="totalQuestions"></span></h2>
+      </div>
+    </section>
+        <!-- Question section -->
+    <section>
         <div class="quiz-container">
             <div class="row">
               <div class="col-sm-12 question-container">
                 <h1 id="question" class="text-center">Welcome to the quiz!</h1>
-                
               </div>
             </div>
+      </section>
+      <!-- Answer buttons -->
+       <section>
             <div class="row">
               <div class="col-sm-12">
                 <button type="button" class="answer-button" id="answer1">Start Game</button>
@@ -56,8 +62,9 @@
                 </div>
               </div>
           </div>
-
+        </section>
                 <!-- Score Modal -->
+                 <section>
                 <div class="modal fade" id="scoreModal" tabindex="-1" role="dialog" aria-labelledby="scoreModalLabel" aria-hidden="true">
                   <div class="modal-dialog" role="document">
                     <div class="modal-content">
@@ -76,8 +83,10 @@
                     </div>
                   </div>
                 </div>
+              </section>
 
         <!-- Error 4 modal -->
+         <section>
         <div class="modal fade" id="errorModalRC4" tabindex="-1" role="dialog" aria-labelledby="errorModalRC4">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -97,7 +106,7 @@
             </div>
           </div>
         </div>
-
+      </section>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" async integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="scripts/game.js"></script>
