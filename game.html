@@ -20,7 +20,7 @@
       <div class="spinner-grow loading-spinner" role="status">
       </div>
       <br>
-      <span class="sr-only loading-text"><strong>LOADING</strong><br></span><span class="small-text">YOUR QUIZ IS LOADING</span>
+      <span class="sr-only loading-text" aria-label="loading"><strong>LOADING</strong><br></span><span class="small-text">YOUR QUIZ IS LOADING</span>
     </div>
 
     <!-- SCORE -->
@@ -71,7 +71,7 @@
                         <!-- Insert score in JS -->
                       </div>
                       <div class="modal-footer score-modal-footer">
-                        <button type="button" class="btn btn-secondary" onclick="goToHomepage()">Back to Menu</button>
+                        <button type="button" class="btn btn-secondary" onclick="goToHomepage()" aria-label="go back to the menu">Back to Menu</button>
                       </div>
                     </div>
                   </div>
@@ -91,8 +91,8 @@
                 Not enough questions remaining, please refresh the session token below or return to the menu to choose different quiz parameters.
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-primary" onclick="refreshToken()">Refresh Token</button>
-                <button type="button" class="btn btn-secondary" onclick="goToHomepage()">Back to Menu</button>
+                <button type="button" class="btn btn-primary" onclick="refreshToken()" aria-label="refresh token">Refresh Token</button>
+                <button type="button" class="btn btn-secondary" onclick="goToHomepage()" aria-label="go back to the menu">Back to Menu</button>
               </div>
             </div>
           </div>
