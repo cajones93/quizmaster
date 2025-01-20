@@ -147,8 +147,8 @@ body{
 #formSubmit.disabled{
     background-color: #BCBBF2;
     border-color: #BCBBF2;
+    color: black;
     width: 40%;
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 /* END OF FORM */
 
@@ -270,7 +270,7 @@ body{
 
     body{
             
-        background-size: 110%;
+        background-size: 120%;
     }
 
     .mb-3{
