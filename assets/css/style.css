@@ -6,7 +6,7 @@
 body{
     background-color: #FFFDF6;
     font-family: "Cantarell", sans-serif;
-    background-image: url("../images/bg-img-mobile.jpg");
+    background-image: url("../images/bg-img-mobile.webp");
     background-position: center;
     background-repeat: no-repeat;
     background-size: 200%;
@@ -66,7 +66,7 @@ body{
     padding: 10px;
     height: 100%;
     width: 100%;
-    background-image: url(../images/quizmaster-logo-transparent-mobile.png);
+    background-image: url(../images/quizmaster-logo-transparent-mobile.webp);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -310,7 +310,7 @@ body{
     }
 
     .header-div{
-        background-image: url(../images/quizmaster-logo-transparent-tablet.png);
+        background-image: url(../images/quizmaster-logo-transparent-tablet.webp);
     }
     
     #quiz-param-form{
@@ -358,7 +358,7 @@ body{
     @media (min-width:1024px){
 
         body{
-            background-image: url(../images/bg-img-lg.jpg);
+            background-image: url(../images/bg-img-lg.webp);
             background-position: center;
             background-size: 160%;
         }
@@ -369,7 +369,7 @@ body{
 
         .header-div {
             width: 80%;
-            background-image: url(../images/quizmaster-logo-transparent-1024.png);
+            background-image: url(../images/quizmaster-logo-transparent-1024.webp);
         }
 
         .answer-button{
@@ -415,7 +415,7 @@ body{
 
         .header-div{
             width: 70%;
-            background-image: url(../images/quizmaster-logo-transparent-1440.png);
+            background-image: url(../images/quizmaster-logo-transparent-1440.webp);
         }
 
         .answer-button{
