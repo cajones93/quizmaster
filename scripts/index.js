@@ -62,15 +62,6 @@ async function getAPIURL(){
     // Wait for session token
     const sessionToken = await getSessionToken(); // Await the promise
 
-
-    if(categoryChoice.value === "music" && difficultyChoice.value === "hard" && quizTypeChoice.value === "boolean"){
-      difficultyChoice.value = "medium";
-    }
-    if(categoryChoice.value === "scienceAndNature" && difficultyChoice.value === "hard" && quizTypeChoice.value === "boolean"){
-      difficultyChoice.value = "medium";
-    }
-
-
     // build the api url using the session token
     let API_URL = `https://opentdb.com/api.php?amount=${noOfQuestions.value}&category=${categoryID}&difficulty=${difficultyChoice.value}&type=${quizTypeChoice.value}&token=${sessionToken}`;
 
