@@ -1,6 +1,5 @@
 
 const submitButton = document.getElementById("formSubmit");
-const quizParamForm = document.getElementById("quiz-param-form");
 const selectElements = document.querySelectorAll('select');
 
 
@@ -79,7 +78,7 @@ async function getAPIURL(){
     localStorage.setItem("quizParams", JSON.stringify(quizParams));
 
       return 0;
-};
+}
 
 // assign the correct category ID based on category choice
 function setCategoryID (categoryChoice){
