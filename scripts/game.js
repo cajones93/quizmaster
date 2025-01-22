@@ -172,7 +172,7 @@ function addButtonListeners(){
             else {
                 setQuestionAndAnswers();
             }
-        })
+        });
     }
 }
 
@@ -231,14 +231,14 @@ async function setQuestionAndAnswers() {
     if(score === 0){
       return "0.00";
     }
-    let scorePercent = parseFloat((score / quizLength) * 100).toFixed(2);
+    let percentage = parseFloat((score / quizLength) * 100).toFixed(2);
 
-    return scorePercent;
+    return percentage;
   }
 
   function showScore(){
 
-    scorePercent = calculateScorePercent(score);
+    let scorePercent = calculateScorePercent(score);
     scoreModalBody.innerHTML = `Score: <strong>${score}</strong>
     <br>
     Percentage: <strong>${scorePercent}%</strong>
