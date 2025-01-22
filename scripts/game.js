@@ -23,7 +23,6 @@ const answer4Btn = document.getElementById("answer4");
 // Score Modal
 const scoreModal = document.getElementById("scoreModal");
 const scoreModalClose = document.getElementById("scoreModalClose");
-const menuBtn = document.getElementById("menu-button");
 const scoreModalBody = document.getElementById("scoreModal-body");
 
 // Current question text
@@ -86,7 +85,7 @@ async function getData(API_URL) {
   }
 }
 
-
+// refresh token called through error modal button
 async function refreshToken(){
     console.log("Response Code 4 Error called");
     const resetResponse = await fetch((tokenResetURL + sessionToken), {
@@ -174,12 +173,6 @@ function addButtonListeners(){
             }
         });
     }
-}
-
-function decodeHtml(html) {
-    var txt = document.createElement("textarea");
-    txt.innerHTML = html;
-    return txt.value;
 }
 
 async function setQuestionAndAnswers() {
