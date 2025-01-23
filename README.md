@@ -235,16 +235,41 @@ This section shows the website responsiveness on a mobile device, iPad, and desk
 
 ### Code Validation
 #### HTML Validation
-##### Home
-![Home HTML](assets/images/readme/testing/html/home-html-valid.png)
+##### Index page
+![Index HTML](assets/images/readme/testing/validation/index-html-valid.png)
 
 Result: No Errors.
 
-##### About
-![About HTML](assets/images/readme/testing/html/about-html-valid.png)
+##### Game page
+![Game HTML](assets/images/readme/testing/validation/game-html-valid.png)
 
 Result: No Errors.
 
+#### CSS Validation
+##### Index page
+![Index CSS](assets/images/readme/testing/validation/index-css-valid.png)
+
+Result: No Errors.
+
+##### Game page
+![Game CSS](assets/images/readme/testing/validation/game-css-valid.png)
+
+Result: No Errors.
+
+#### JavaScript Validation (JSHint)
+##### Index.js
+![Index JS](assets/images/readme/testing/validation/index-jshint.png)
+
+Result: No Errors.
+
+##### Game.js
+![Game JS](assets/images/readme/testing/validation/game-jshint.png)
+
+Result: One warning, one unused variable.
+
+Notes: 
+Warning related to adding eventListeners to buttons in a loop leading to confusing semantics. I thought this was a more concise way to add functionality to my answer buttons.
+Unused variable relates to the refreshToken function which is called by a button in the error modal so is not unused.
 
 ### Manual Testing user stories or/and features
 #### Testing for links, FAQ, and form
