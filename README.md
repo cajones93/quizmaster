@@ -101,7 +101,7 @@ A loading "page" was added to prevent too many API calls in a short time which w
 ### Game Page - Start
 The user will see an initial page layout which prompts them to start the game. The start game button will make the API call and set all of the quiz questions and answers. If there is an error, an error modal will appear. If not, the quiz answer buttons will change based on the quiz type selected.
 
-![About Page](assets/images/readme/features/game-page-start.png)
+![Game Page](assets/images/readme/features/game-page-start.png)
 
 ### Game Page - Multiple Quiz
 If the user has selected multiple choice for the quiz type, 4 buttons will be shown and answers will be randomly allocated to each button. If the user selects the correct answer, their score is increased and the next question is shown. If incorrect, the next question is shown. When the final question is answered, a score modal will appear.
@@ -151,7 +151,7 @@ The score modal is shown at the end of the quiz. It shows the users score as a n
 
 ## Testing
 ### Google's Lighthouse Performance
-This section contains screenshots of the Home, About, and Contact pages lighthouse scores.
+This section contains screenshots of the Index and Game page lighthouse scores.
 Each page has a mobile and desktop score. 
 
 #### Index page
@@ -287,38 +287,37 @@ Entering an invalid URL takes you to the custom 404 page | &check;
 #### User Story Testing
 Number | User Story |  Test | Pass
 --- | --- | --- | :---:
-1 | A user wants to browse available paranormal experiences so that I can see the different options available. | The user scrolls down to see the services offered | &check;
-2 | A user wants to view detailed information about the paranormal experiences so that I can clearly understand what is included in each service. | The user clicks the Our Services button or the about navigation link. They then scroll down to view the detailed information. | &check;  
-3 | A user wants to submit a contact form so that I can reach out to the organiser for more information or to book an experience. | The user clicks the make an enquiry button or the contact navigation link and fills out the contact form. | &check;
-4 | A user wants to get directions to the haunted house locations where paranormal experiences take place. | The user clicks the Our Services button or the Our Services navigation link and scrolls down to the haunted house section. The user can see an interactive map and can click the directions arrow. | &check;
-5 | A user wants to read an FAQ section to quickly find answers to common questions. | The user clicks the Our Services button or the about navigation link and scrolls down to the FAQ section. | &check;
-6 | A user wants to view social media links so that they can follow or share the page with others. | The user scrolls to the bottom of any page and clicks the social media icon. | &check;
+1 | A user wants to select a quiz category so they can choose a topic they are interested in. | The user selects a category from the quiz parameters form on the index page | &check;
+2 | A user wants to choose the number of questions so they can adjust the length of the quiz | The user chooses how many questions from the quiz parameters on the index page form | &check;  
+3 | A user wants to select the difficulty level so they can challenge themselves. | The user selects their preferred difficulty from the quiz parameters form on the index page. | &check;
+4 | A user wants to choose between multiple quiz types. | The user chooses their preferred quiz type from the quiz parameters form on the index page. | &check;
+5 | A user wants to see their final score and percentage of correct answers. | The user completes the quiz and sees their score displayed on the screen. | &check;
+6 | A user wants to return to the quiz menu after finishing the quiz so they can easily start a new quiz. | The user clicks the back to menu button on the score screen. | &check;
 
 ##### User stories testing screenshots
-###### 1. Browse available paranormal experiences
+###### 1. Select a quiz category
 
-![Services](assets/images/readme/user-stories/services.png)
+![Category Choice](assets/images/readme/testing/user-stories/category-choice.png)
 
-###### 2. View detailed information about experiences offered.
+###### 2. Choose the number of questions
 
-![Services](assets/images/readme/user-stories/detailedservices.png)
+![Quiz Length Choice](assets/images/readme/testing/user-stories/questions-choice.png)
 
-###### 3. Submit a contact form.
+###### 3. Select a difficulty level
 
-![Contact Form](assets/images/readme/user-stories/contact1.png)
-![Contact Form Submitted](assets/images/readme/user-stories/contact2.png)
+![Difficulty Choice](assets/images/readme/testing/user-stories/difficulty-choice.png)
 
-###### 4. Get directions to to the haunted houses.
+###### 4. Choose between multiple quiz types
 
-![Haunted House Directions](assets/images/readme/user-stories/map-directions.png)
+![Quiz Type Choice](assets/images/readme/testing/user-stories/quiz-type-choice.png)
 
-###### 5. Read an FAQ section.
+###### 5. See their final score
 
-![FAQ](assets/images/readme/features/faq.png)
+![Score Screen](assets/images/readme/testing/user-stories/score-screen.png)
 
-###### 6. View social media links.
+###### 6. Return to the quiz menu after quiz
 
-![Social Links](assets/images/readme/user-stories/social-links.png)
+![Back to Menu](assets/images/readme/testing/user-stories/score-screen.png)
 
 ## Bugs
 
