@@ -75,10 +75,10 @@ Wireframes were created in Balsamiq.
 ![Mobile Wireframe](assets/images/readme/wireframes/mobile-wireframe.png)
 
 ### Typography
-I searched for a suitable font pairing on [fontpair.co](https://www.fontpair.co/pairings/oswald-source-sans-pro). I liked the look of this font as I think they fit with the spooky theme for the website. Source Sans Pro was unavailable on Google Fonts so I went with Source Sans 3 which is very similar.
+I searched for a suitable font pairing on [fontpair.co](https://www.fontpair.co/all). I chose Fjalla One for titles and question content and Cantarell for the answer buttons. These fonts are easy to read so are ideal for a quiz application.
 
 ### Colour Scheme
-This is the colour scheme I used for this project. It was generated at [coolors.co](https://coolors.co/e6e8e6-9c072c-0e3449-c8963e-030406). I chose darker colours to keep to the spooky theme of the site with a brighter white for contrast.
+This is the colour scheme I used for this project. I found it on Adobe Color trends in the UI/UX section [Adobe Color trends](https://color.adobe.com/trends/Ui/ux). I wanted to stick with a limited color scheme that is not too distracting from the questions and answers.
 
 ![Colour Scheme](assets/images/readme/colour-scheme.png)
 
