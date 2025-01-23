@@ -85,79 +85,69 @@ This is the colour scheme I used for this project. I found it on Adobe Color tre
 ## Features:
 
 ### Navigation
-The website consists of three sections (Home, About, Contact) with navigation elements that link to each.
-When viewed on a mobile device, the navigation elements are condensed into a collapsed list.
-A user can navigate to the about page by clicking the "our services" button on the homepage.
-A user can navigate to the contact page by clicking the "Make an enquiry" button on the homepage.
-After submitting the contact form, a user can return to the homepage by clicking the "Return to home" button.
+A user can navigate through the website through the buttons and forms. To get to the quiz, a user must input all of the quiz parameters and click the submit button. A user can return to the menu through the "back to menu" button. This button is on the game page and in the error and score modals that appear.
 
-#### Desktop Navbar
-![Navbar Desktop](assets/images/readme/features/nav-desktop.png)
-
-#### Mobile Navbar
-![Navbar Mobile](assets/images/readme/features/nav-mobile.png)
-
-### Footer
-The footer on every page contains links to social media sites Facebook, Youtube, Instagram, and WhatsApp. The icons change colour when the user mouses over them to give some feedback.
-
-![Footer](assets/images/readme/features/footer.png)
 
 ### Home Page
-The home page shows a large callout section which grabs the users attention. It allows a user to click the "Our Services" or "Make an enquiry" buttons to go to the "About" and "Contact" pages.
-When a user scrolls down, they can see some brief information about the services offered and some testimonials from previous customers.
+The home page shows a quiz parameters form. A user must select all of the quiz parameters before they are able to submit the form. This ensures that they have chosen all settings before trying to start the quiz.
 
 ![Home Page](assets/images/readme/features/homepage.png)
 
-### About Page
-The about page gives detailed information about each of the services allowing the user to find out more about each service and what can be expected.
+### Game Page - Loading Div
+A loading "page" was added to prevent too many API calls in a short time which would lead to errors from the API. When loading the page for the first time,  refreshing the page, or refreshing the session token the user will see this div. It has a loading spinner as feedback for the user to know the site is still working and loading text so the user knows what is happening.
+
+![Loading]
+
+
+### Game Page - Start
+The user will see an initial page layout which prompts them to start the game. The start game button will make the API call and set all of the quiz questions and answers. If there is an error, an error modal will appear. If not, the quiz answer buttons will change based on the quiz type selected.
 
 ![About Page](assets/images/readme/features/about-page.png)
 
-### Contact Page
-The contact page consists of a contact form which allows a user to enter their personal details, choose one or more of the services, and ask questions to the company. Once a user submits the form, they are taken to a page to confirm that the form has been submitted.
+### Game Page - Multiple Quiz
+If the user has selected multiple choice for the quiz type, 4 buttons will be shown and answers will be randomly allocated to each button. If the user selects the correct answer, their score is increased and the next question is shown. If incorrect, the next question is shown. When the final question is answered, a score modal will appear.
 
-![Contact Page](assets/images/readme/features/contact-page.png)
+![Multiple Quiz]()
 
-### Contact-complete Page
-This page confirms the submission of the contact form. It contains a brief "thank you" message and lets the user know that the company will contact them soon. This page ensures that the user is receiving feedback on the form submission. It then gives the user a link back to the homepage with the "back to home" button conveniently located.
+### Game Page - Boolean Quiz
+If the user has selected true/false for the quiz type, 2 buttons will be shown "true" and "false". If the user selects the correct answer, their score is increased and the next question is shown. If incorrect, the next question is shown. When the final question is answered, a score modal will appear.
 
-![Contact Submitted Page](assets/images/readme/features/contact-complete-page.png)
+![Boolean Quiz]()
 
-### Map
-A user can view the haunted locations offered by the company on the about page.
+### Session Token
+The API provides a session token which prevents the API from showing a user the same question twice until the session token is refreshed. I decided to implement this to make things more interesting for the user. It is more interesting to answer different questions each time rather than answering the same questions over and over. This session token did cause a lot of issues during development which I have resolved.
 
-![Map](assets/images/readme/features/about-map.png)
+### Error 4 Modal
+If the API returns a response code 4 error, this meant that the API had returned all of the available questions and the session token needed to be refreshed. I created an error modal that has a button to refresh the token. The refresh token button calls the session token refresh link from the API and refreshes the page. This should reset all of the questions and allow the user to play again.
 
-### FAQ (Frequently Asked Questions)
-The FAQ contains frequently asked questions that users may be wondering about. This allows a user to view questions and get quick answers. The FAQ is in an accordion style which keeps it condensed.
+![Error Modal]()
 
-![FAQ](assets/images/readme/features/faq.png)
+### Score Modal
+The score modal is shown at the end of the quiz. It shows the users score as a number and as a percentage. It also includes a back to menu button to return to the index page.
 
-### Contact Form
-A user can submit a contact form to learn more about or book one of the services offered.
+![Score Modal]()
 
-![Contact Form](assets/images/readme/features/contact-form.png)
-
-### Custom 404 Page
-I created a simple 404 page with a button to redirect users back to the homepage easily.
-
-![404 Page](assets/images/readme/features/404-page.png)
 
 ### Features left to implement
-* I wanted to put the services into cards to make them look more appealing and self-contained but I didn't have time to implement this at the end.
-* I couldn't find a way to prevent the contact form submitting without selecting a service without using JavaScript so that was not implemented.
+* I wanted to add a high score table to track the users high scores for each quiz type but thought it would take too long to implement and would involve more APIs such as ![HighScore API](https://github.com/EmilienLeroy/HighScore).
+* I had to remove one of the difficulty levels because there weren't enough true/false questions in the API database for some categories. I tried to add my own questions to the API but I never received a verification email from them to create an account.
 
 ## Technologies Used
 * HTML - used for structuring the website
 * CSS - for style and layout
 * Bootstrap - for style and layout
+* JavaScript - for interactivity
 * Font Awesome - for icons
+* Open Trivia Database - API for quiz questions and answers
 * Google Fonts - for the fonts
-* Google Maps - for embedding an iFrame with the map on the about page
 * Github - for hosting and deploying the website
 * BrowserStack - for testing the website compatibility with different browsers
 * Responsinator - to view website on different devices
+* Am I responsive? - to check responsive design
 * Imageresizer - to resize images easily
+* Cloud convert - to convert images to the webp format
+* logo.com - to create an interesting logo
+* Adobe color - to find a good colour scheme
 
 ## Testing
 ### Google's Lighthouse Performance
