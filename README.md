@@ -272,17 +272,24 @@ Warning related to adding eventListeners to buttons in a loop leading to confusi
 Unused variable relates to the refreshToken function which is called by a button in the error modal so is not unused.
 
 ### Manual Testing user stories or/and features
-#### Testing for links, FAQ, and form
+#### Testing for API calls, questions, answers, modals, and buttons
 Test | Pass
 --- | :---:
-All navigation buttons lead to the correct pages  | &check;
-Callout buttons lead to the correct pages  | &check;
-Footer links open a new tab and lead to the correct sites  | &check;
-FAQ accordion functions correctly  | &check;
-Contact form doens't submit without entering information  | &check;
-Contact form submits when required information is present  | &check;
-Back to Home button takes user back to homepage | &check;
-Entering an invalid URL takes you to the custom 404 page | &check;
+A user cannot submit the quiz parameters form without selecting all parameters  | &check;
+A user can submit the quiz parameters form after selecting all parameters  | &check;
+The API returns questions and answers after clicking the start game button  | &check;
+Choosing an answer moves onto the next question  | &check;
+Questions and answers are assigned to the correct places  | &check;
+The score modal is displayed after the final question is answered  | &check;
+Back to Menu buttons on game page and in modals take the user back to the index page | &check;
+If the API returns response code 4, the error modal is displayed | &check;
+The session token is refreshed when the refresh token button is pressed | &check;
+The loading div is displayed when the user goes to the game page | &check;
+The loading div is displayed when a user refreshes the game page | &check;
+The loading div is removed after 3 seconds on the game page | &check;
+The quiz parameters still exist when the user refreshes the game page | &check;
+If a user directly enters the game page without setting quiz parameters, they are shown an error |  ;
+
 
 #### User Story Testing
 Number | User Story |  Test | Pass
