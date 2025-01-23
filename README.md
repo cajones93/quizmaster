@@ -83,32 +83,35 @@ This is the colour scheme I used for this project. I found it on Adobe Color tre
 ### Navigation
 A user can navigate through the website through the buttons and forms. To get to the quiz, a user must input all of the quiz parameters and click the submit button. A user can return to the menu through the "back to menu" button. This button is on the game page and in the error and score modals that appear.
 
+### Index Page
+The index page shows a quiz parameters form. A user must select all of the quiz parameters before they are able to submit the form. This ensures that they have chosen all settings before trying to start the quiz.
 
-### Home Page
-The home page shows a quiz parameters form. A user must select all of the quiz parameters before they are able to submit the form. This ensures that they have chosen all settings before trying to start the quiz.
+![Index Page](assets/images/readme/features/index-page.png)
 
-![Home Page](assets/images/readme/features/homepage.png)
+The submit button is disabled until a user selects all of the quiz parameters.
+
+![Index Page Disabled](assets/images/readme/features/index-page-disabled.png)
 
 ### Game Page - Loading Div
 A loading "page" was added to prevent too many API calls in a short time which would lead to errors from the API. When loading the page for the first time,  refreshing the page, or refreshing the session token the user will see this div. It has a loading spinner as feedback for the user to know the site is still working and loading text so the user knows what is happening.
 
-![Loading]
+![Loading](assets/images/readme/features/loading-div.png)
 
 
 ### Game Page - Start
 The user will see an initial page layout which prompts them to start the game. The start game button will make the API call and set all of the quiz questions and answers. If there is an error, an error modal will appear. If not, the quiz answer buttons will change based on the quiz type selected.
 
-![About Page](assets/images/readme/features/about-page.png)
+![About Page](assets/images/readme/features/game-page-start.png)
 
 ### Game Page - Multiple Quiz
 If the user has selected multiple choice for the quiz type, 4 buttons will be shown and answers will be randomly allocated to each button. If the user selects the correct answer, their score is increased and the next question is shown. If incorrect, the next question is shown. When the final question is answered, a score modal will appear.
 
-![Multiple Quiz]()
+![Multiple Quiz](assets/images/readme/features/game-page-multiple.png)
 
 ### Game Page - Boolean Quiz
 If the user has selected true/false for the quiz type, 2 buttons will be shown "true" and "false". If the user selects the correct answer, their score is increased and the next question is shown. If incorrect, the next question is shown. When the final question is answered, a score modal will appear.
 
-![Boolean Quiz]()
+![Boolean Quiz](assets/images/readme/features/game-page-boolean.png)
 
 ### Session Token
 The API provides a session token which prevents the API from showing a user the same question twice until the session token is refreshed. I decided to implement this to make things more interesting for the user. It is more interesting to answer different questions each time rather than answering the same questions over and over. This session token did cause a lot of issues during development which I have resolved.
@@ -116,12 +119,12 @@ The API provides a session token which prevents the API from showing a user the 
 ### Error 4 Modal
 If the API returns a response code 4 error, this meant that the API had returned all of the available questions and the session token needed to be refreshed. I created an error modal that has a button to refresh the token. The refresh token button calls the session token refresh link from the API and refreshes the page. This should reset all of the questions and allow the user to play again.
 
-![Error Modal]()
+![Error Modal](assets/images/readme/features/error-modal.png)
 
 ### Score Modal
 The score modal is shown at the end of the quiz. It shows the users score as a number and as a percentage. It also includes a back to menu button to return to the index page.
 
-![Score Modal]()
+![Score Modal](assets/images/readme/features/score-modal.png)
 
 
 ### Features left to implement
@@ -144,64 +147,66 @@ The score modal is shown at the end of the quiz. It shows the users score as a n
 * Cloud convert - to convert images to the webp format
 * logo.com - to create an interesting logo
 * Adobe color - to find a good colour scheme
+* Pagespeed Insights - for Google lighthouse testing
 
 ## Testing
 ### Google's Lighthouse Performance
 This section contains screenshots of the Home, About, and Contact pages lighthouse scores.
 Each page has a mobile and desktop score. 
 
-#### Index
+#### Index page
 #####  Mobile
-![Home Mobile](assets/images/readme/testing/lighthouse/lighthouse-home-mob.png)
+![Index Mobile](assets/images/readme/testing/lighthouse-testing/lighthouse-index-mob.png)
 
 ##### Desktop
-![Home Desktop](assets/images/readme/testing/lighthouse/lighthouse-home-desk.png)
+![Index Desktop](assets/images/readme/testing/lighthouse-testing/lighthouse-index-desk.png)
 
-#### Game
+#### Game page
 ##### Mobile
-![About Mobile](assets/images/readme/testing/lighthouse/lighthouse-about-mob.png)
+![Game Mobile](assets/images/readme/testing/lighthouse-testing/lighthouse-game-mob.png)
 
 ##### Desktop
-![About Desktop](assets/images/readme/testing/lighthouse/lighthouse-about-desk.png)
-
-
-
+![Game Desktop](assets/images/readme/testing/lighthouse-testing/lighthouse-game-desk.png)
 
 
 ### Browser Compatibility
 #### Chrome
 ##### Desktop
-![Chrome Test Desktop](assets/images/readme/testing/browser/chrome-desk-test.png)
+![Chrome Test Desktop](assets/images/readme/testing/browser/chrome-game.png)
 
 Result: No issues
 
 ##### Mobile
-![Chrome Test Mobile](assets/images/readme/testing/browser/chrome-mob-test.png)
+![Chrome Test Mobile](assets/images/readme/testing/browser/chrome-mob.png)
 
 Result: No issues
 
 #### Firefox
 ##### Desktop
-![Firefox Test Desktop](assets/images/readme/testing/browser/firefox-test.png)
+![Firefox Test Desktop](assets/images/readme/testing/browser/firefox-index.png)
 
 Result: No issues
 
 ##### Mobile
-![Firefox Test Desktop](assets/images/readme/testing/browser/firefox-mob-test.png)
+![Firefox Test Desktop](assets/images/readme/testing/browser/firefox-mob.png)
 
 Result: No issues
 
 #### Safari
-##### Desktop
-![Safari Test Desktop](assets/images/readme/testing/browser/safari-test.png)
+##### Desktop (Safari 5.1)
+![Safari 5.1 Test Desktop](assets/images/readme/testing/browser/safari-desk.png)
+
+Result: Safari 5.1 on a Windows machine was unable to connect to the website.
+
+##### Mac (Safari 18.1)
+![Safari 18.1 Test Mac](assets/images/readme/testing/browser/safari-mac.png)
 
 Result: No issues
 
 ##### Mobile
-![Safari Test Mobile](assets/images/readme/testing/browser/safari-mob-test.png)
+![Safari Test](assets/images/readme/testing/browser/iphone-game.png)
 
-Result: The map on the about page overhangs onto the FAQ section. 
-(Resolved) - No issues.
+Result: No issues
 
 ### Responsiveness
 This section shows the website responsiveness on a mobile device, iPad, and desktop. You can see how the site adapts to the different screen sizes through these screenshots.
@@ -227,15 +232,7 @@ This section shows the website responsiveness on a mobile device, iPad, and desk
 ##### Desktop
 ![Home Services](assets/images/readme/testing/responsiveness/desktop-services.png)
 
-#### Contact Form
-##### Mobile
-![Contact Mobile](assets/images/readme/testing/responsiveness/mob-contact-form.png)
 
-##### iPad
-![Contact iPad](assets/images/readme/testing/responsiveness/ipad-contact-form.png)
-
-##### Desktop
-![Contact Desktop](assets/images/readme/testing/responsiveness/desktop-contact.png)
 
 ### Code Validation
 #### HTML Validation
@@ -366,6 +363,7 @@ The project was deployed using GitHub pages. The steps to deploy using GitHub pa
   
   > Simple countdown for loading div - James McDowell: [Link](https://stackoverflow.com/questions/31106189/create-a-simple-10-second-countdown)
   
+  > Quiz questions and answers - Open Trivia Database: [Link](https://opentdb.com/)
 
 ### Media
   
