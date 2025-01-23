@@ -1,7 +1,7 @@
+/*jshint esversion: 6*/
 
 const submitButton = document.getElementById("formSubmit");
 const selectElements = document.querySelectorAll('select');
-
 
 // check parameters are selected each time user changes an option, enable submit button when all parameters are selected
 selectElements.forEach(select => {
@@ -18,7 +18,6 @@ selectElements.forEach(select => {
 function allParamsSelected() {
     return Array.from(selectElements).every(select => select.value !== select.options[0].value);
   }
-
 
 submitButton.addEventListener("click", async (e) => {
     e.preventDefault(); // Prevent default form submission behavior
