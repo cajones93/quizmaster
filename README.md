@@ -1,4 +1,6 @@
 # Quizmaster
+![Quizmaster Devices](assets/images/readme/quizmaster-devices.png)
+
 Link to the live site: [Quizmaster](https://cajones93.github.io/quizmaster/index.html)
 
 ## Table Of Contents:
