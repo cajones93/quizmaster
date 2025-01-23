@@ -14,15 +14,8 @@ Link to the live site: [Quizmaster](https://cajones93.github.io/quizmaster/index
     
 3. [Features](#features)
     * [Navigation](#Navigation)
-    * [Footer](#Footer)
     * [Home page](#Home-page)
-    * [About page](#about-page)
-    * [Contact page](#contact-page)
-    * [Contact complete page](#contact-complete-page)
-    * [Map](#map)
-    * [FAQ](#faq-frequently-asked-questions)
-    * [Contact form](#contact-form)
-    * [Custom 404 Page](#custom-404-page)
+    * [Game page](#game-page)
     * [Features left to implement](#features-left-to-implement)
 
 4. [Technologies Used](#technologies-used)
@@ -34,6 +27,7 @@ Link to the live site: [Quizmaster](https://cajones93.github.io/quizmaster/index
   * [Code Validation](#code-validation)
     * [HTML](#html-validation)
     * [CSS](#css-validation)
+    * [JavaScript]()
   * [Manual testing](#manual-testing-user-stories-orand-features)
 
 6. [Bugs](#bugs)
@@ -131,13 +125,13 @@ The score modal is shown at the end of the quiz. It shows the users score as a n
 ### Features left to implement
 * I wanted to add a high score table to track the users high scores for each quiz type but thought it would take too long to implement and would involve more APIs such as ![HighScore API](https://github.com/EmilienLeroy/HighScore).
 * I had to remove one of the difficulty levels because there weren't enough true/false questions in the API database for some categories. I tried to add my own questions to the API but I never received a verification email from them to create an account.
+* It would be nice to have a different page layout available in portrait and landscape. I only focused on a portrait view but a user may want to rotate their phone or tablet to play in landscape.
 
 ## Technologies Used
 * HTML - used for structuring the website
 * CSS - for style and layout
 * Bootstrap - for style and layout
 * JavaScript - for interactivity
-* Font Awesome - for icons
 * Open Trivia Database - API for quiz questions and answers
 * Google Fonts - for the fonts
 * Github - for hosting and deploying the website
