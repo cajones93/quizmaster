@@ -211,27 +211,26 @@ Result: No issues
 ### Responsiveness
 This section shows the website responsiveness on a mobile device, iPad, and desktop. You can see how the site adapts to the different screen sizes through these screenshots.
 
-#### Home Page
+#### Index Page
 ##### Mobile
-![Home iPhone](assets/images/readme/testing/responsiveness/mob-home.png)
+![Index iPhone](assets/images/readme/testing/responsiveness/iphone-index.png)
 
 ##### iPad
-![Home iPad](assets/images/readme/testing/responsiveness/home-ipad.png)
+![Index iPad](assets/images/readme/testing/responsiveness/ipad-index.png)
 
 ##### Desktop
-![Home Desktop](assets/images/readme/testing/responsiveness/desktop-home.png)
+![Index Desktop](assets/images/readme/testing/responsiveness/firefox-index.png)
 
 
-#### About Page
+#### Game Page
 ##### Mobile
-![Home Services](assets/images/readme/testing/responsiveness/about-mob.png)
+![Game iPhone](assets/images/readme/testing/responsiveness/iphone-game.png)
 
 ##### iPad
-![Home Services](assets/images/readme/testing/responsiveness/about-ipad.png)
+![Game iPad](assets/images/readme/testing/responsiveness/ipad-game.png)
 
 ##### Desktop
-![Home Services](assets/images/readme/testing/responsiveness/desktop-services.png)
-
+![Game Desktop](assets/images/readme/testing/responsiveness/firefox-game.png)
 
 
 ### Code Validation
@@ -246,29 +245,12 @@ Result: No Errors.
 
 Result: No Errors.
 
-##### Contact
-![Contact HTML](assets/images/readme/testing/html/contact-html-valid.png)
-
-Result: No Errors.
-
-##### Contact-Complete
-![Contact Complete HTML](assets/images/readme/testing/html/contact-complete-html-valid.png)
-Result: No Errors.
-
-##### 404 Page
-![404 HTML](assets/images/readme/testing/html/404-html-valid.png)
-Result: No Errors.
-
-#### CSS Validation
-![CSS Validation](assets/images/readme/testing/css/css-valid.png)
-
-Result: No Errors.
 
 ### Manual Testing user stories or/and features
 #### Testing for links, FAQ, and form
 Test | Pass
 --- | :---:
-All navigation links lead to the correct pages  | &check;
+All navigation buttons lead to the correct pages  | &check;
 Callout buttons lead to the correct pages  | &check;
 Footer links open a new tab and lead to the correct sites  | &check;
 FAQ accordion functions correctly  | &check;
