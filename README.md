@@ -277,9 +277,11 @@ Test | Pass
 --- | :---:
 A user cannot submit the quiz parameters form without selecting all parameters  | &check;
 A user can submit the quiz parameters form after selecting all parameters  | &check;
+Quiz parameter variables are passed from the index page to the game page | &check;
 The API returns questions and answers after clicking the start game button  | &check;
 Choosing an answer moves onto the next question  | &check;
 Questions and answers are assigned to the correct places  | &check;
+Question and answer text is displayed correctly | &check;
 The score modal is displayed after the final question is answered  | &check;
 Back to Menu buttons on game page and in modals take the user back to the index page | &check;
 If the API returns response code 4, the error modal is displayed | &check;
@@ -288,7 +290,7 @@ The loading div is displayed when the user goes to the game page | &check;
 The loading div is displayed when a user refreshes the game page | &check;
 The loading div is removed after 3 seconds on the game page | &check;
 The quiz parameters still exist when the user refreshes the game page | &check;
-If a user directly enters the game page without setting quiz parameters, they are shown an error |  ;
+If a user directly enters the game page without setting quiz parameters, they are shown an error | 
 
 
 #### User Story Testing
