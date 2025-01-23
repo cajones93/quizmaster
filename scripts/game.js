@@ -1,4 +1,4 @@
-/*jshint esversion: 6*/
+/*jshint esversion: 8*/
 
 let quizData;
 let quizLength, sessionToken, quizCategory, difficulty, quizType;
