@@ -210,6 +210,8 @@ body {
     border-radius: 10px;
     text-decoration: none;
     padding: 10px;
+    background-color: #f3f7fe;
+    font-weight: bold;
 }
 
 .container404 p{
@@ -230,8 +232,9 @@ body {
     margin-top: 10px;
 }
 
-.img404:hover{
-    color: #030A8C;
+.container404 a:hover{
+    color: white;
+    background-color: #5056BF;
 }
 
 #question {
