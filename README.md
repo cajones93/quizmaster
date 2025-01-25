@@ -81,7 +81,7 @@ This is the colour scheme I used for this project. I found it on Adobe Color tre
 ## Features:
 
 ### Navigation
-A user can navigate through the website through the buttons and forms. To get to the quiz, a user must input all of the quiz parameters and click the submit button. A user can return to the menu through the "back to menu" button. This button is on the game page and in the error and score modals that appear.
+A user can navigate through the website through the buttons and forms. To get to the quiz, a user must input all of the quiz parameters and click the submit button. A user can return to the menu through the "back to menu" button. This button is on the game page and in the error and score modals that appear. After starting the quiz, a user can return to the menu any time by pushing the "back to menu" button above the question container.
 
 ### Index Page
 The index page shows a quiz parameters form. A user must select all of the quiz parameters before they are able to submit the form. This ensures that they have chosen all settings before trying to start the quiz.
@@ -116,10 +116,15 @@ If the user has selected true/false for the quiz type, 2 buttons will be shown "
 ### Session Token
 The API provides a session token which prevents the API from showing a user the same question twice until the session token is refreshed. I decided to implement this to make things more interesting for the user. It is more interesting to answer different questions each time rather than answering the same questions over and over. This session token did cause a lot of issues during development which I have resolved.
 
-### Error 4 Modal
+### No Parameters Error Modal
+If a user directly accesses the game page without setting quiz parameters in the index page, they will be shown an error modal directing them back to the menu to set their parameters.
+
+![No Parameters Modal](assets/images/readme/features/no-params-error-modal.png)
+
+### Token Error Modal
 If the API returns a response code 4 error, this meant that the API had returned all of the available questions and the session token needed to be refreshed. I created an error modal that has a button to refresh the token. The refresh token button calls the session token refresh link from the API and refreshes the page. This should reset all of the questions and allow the user to play again.
 
-![Error Modal](assets/images/readme/features/error-modal.png)
+![Token Error Modal](assets/images/readme/features/token-error-modal.png)
 
 ### Score Modal
 The score modal is shown at the end of the quiz. It shows the users score as a number and as a percentage. It also includes a back to menu button to return to the index page.
@@ -230,7 +235,7 @@ This section shows the website responsiveness on a mobile device, iPad, and desk
 ![Game iPad](assets/images/readme/testing/responsiveness/ipad-game.png)
 
 ##### Desktop
-![Game Desktop](assets/images/readme/testing/responsiveness/firefox-game.png)
+![Game Desktop](assets/images/readme/testing/responsiveness/desktop-game.png)
 
 
 ### Code Validation

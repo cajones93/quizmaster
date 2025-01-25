@@ -22,7 +22,6 @@ const answer4Btn = document.getElementById("answer4");
 
 // Score Modal
 const scoreModal = document.getElementById("scoreModal");
-const scoreModalClose = document.getElementById("scoreModalClose");
 const scoreModalBody = document.getElementById("scoreModal-body");
 
 // Current question text
