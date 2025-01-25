@@ -212,6 +212,11 @@ body {
     padding: 10px;
 }
 
+.container404 p{
+    margin-bottom: 1.5rem;
+    font-size: 100%;
+}
+
 .img404{
     object-fit: contain;
     height: 40%;
@@ -325,6 +330,11 @@ body {
 
     .container404-content{
         max-width: 50%;
+        height: 25em;
+    }
+
+    .container404 p{
+        font-size: 120%;
     }
 
     .img404{
@@ -417,6 +427,10 @@ body {
     .question-container {
         margin-bottom: 5px;
     }
+
+    .container404 p{
+        font-size: 180%;
+    }
 }
 
 /* Desktop 1024*/
@@ -426,6 +440,10 @@ body {
         background-image: url(../images/bg-img-lg.webp);
         background-position: center;
         background-size: 160%;
+    }
+
+    .container404 p{
+        font-size: 150%;
     }
 
     .header-container {
