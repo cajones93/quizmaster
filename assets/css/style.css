@@ -186,16 +186,16 @@ body {
 
 }
 
-.container404{
+.container404 {
     width: 100%;
     display: flex;
     justify-content: center;
 }
 
-.container404-content{
+.container404-content {
     height: 20em;
     width: 80%;
-    
+
     border: 3px solid black;
     border-radius: 15px;
     text-align: center;
@@ -203,7 +203,7 @@ body {
 
 }
 
-.container404 a{
+.container404 a {
     font-size: 150%;
     margin: 10px;
     border: 2px solid #000;
@@ -214,17 +214,17 @@ body {
     font-weight: bold;
 }
 
-.container404 p{
+.container404 p {
     margin-bottom: 1.5rem;
     font-size: 100%;
 }
 
-.container404 h1{
+.container404 h1 {
     font-family: "Fjalla One", sans-serif;
     letter-spacing: 1px;
 }
 
-.img404{
+.img404 {
     object-fit: contain;
     height: 40%;
     max-width: 50%;
@@ -232,7 +232,7 @@ body {
     margin-top: 10px;
 }
 
-.container404 a:hover{
+.container404 a:hover {
     color: white;
     background-color: #5056BF;
 }
@@ -336,16 +336,16 @@ body {
 /* Tablet */
 @media (min-width:768px) {
 
-    .container404-content{
+    .container404-content {
         max-width: 50%;
         height: 25em;
     }
 
-    .container404 p{
+    .container404 p {
         font-size: 120%;
     }
 
-    .img404{
+    .img404 {
         height: 50%;
     }
 
@@ -436,7 +436,7 @@ body {
         margin-bottom: 5px;
     }
 
-    .container404 p{
+    .container404 p {
         font-size: 180%;
     }
 }
@@ -450,7 +450,7 @@ body {
         background-size: 160%;
     }
 
-    .container404 p{
+    .container404 p {
         font-size: 150%;
     }
 
@@ -468,7 +468,7 @@ body {
         margin: 5px;
     }
 
-    .container404-content{
+    .container404-content {
         height: 28em;
     }
 

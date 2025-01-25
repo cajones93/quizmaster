@@ -21,8 +21,8 @@ function allParamsSelected() {
 
 submitButton.addEventListener("click", async (e) => {
   e.preventDefault(); // Prevent default form submission behavior
-    await getAPIURL();
-    window.location.href = "game.html"; // Redirect to game page after successful submission
+  await getAPIURL();
+  window.location.href = "game.html"; // Redirect to game page after successful submission
 });
 
 // generate a session token
