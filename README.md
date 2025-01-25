@@ -131,6 +131,10 @@ The score modal is shown at the end of the quiz. It shows the users score as a n
 
 ![Score Modal](assets/images/readme/features/score-modal.png)
 
+### Custom 404 Page
+I created a simple custom 404 page that contains a link back to the index page.
+
+![404 Page](assets/images/readme/features/404-page.png)
 
 ### Features left to implement
 * I wanted to add a high score table to track the users high scores for each quiz type but thought it would take too long to implement and would involve more APIs such as ![HighScore API](https://github.com/EmilienLeroy/HighScore).
@@ -392,6 +396,6 @@ The project was deployed using GitHub pages. The steps to deploy using GitHub pa
 
 > Answer Buttons CSS - Mhyar-nsi: [Link](https://uiverse.io/Mhyar-nsi/tiny-wasp-99)
 
-    
+> 404 page shocked cartoon image -  Ladixstudio: [Link](https://www.creativefabrica.com/product/kawaii-cartoon-character-cute-shocked/)
 ### Acknowledgment
 > Thank you to course facilitator Marko for providing a lot of useful information and weekly standup calls.
