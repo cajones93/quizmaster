@@ -361,6 +361,7 @@ Number | User Story |  Test | Pass
 
 ## Deployment
 #### Creating Repository on GitHub
+
 - First make sure you are signed into [Github](https://github.com/) and go to the code institutes template, which can be found [here](https://github.com/Code-Institute-Org/gitpod-full-template).
 - Then click on **use this template** and select **Create a new repository** from the drop-down. Enter the name for the repository and click **Create repository from template**.
 - Once the repository was created, I clicked the green **gitpod** button to create a workspace in gitpod so that I could write the code for the site.
@@ -397,5 +398,7 @@ The project was deployed using GitHub pages. The steps to deploy using GitHub pa
 > Answer Buttons CSS - Mhyar-nsi: [Link](https://uiverse.io/Mhyar-nsi/tiny-wasp-99)
 
 > 404 page shocked cartoon image -  Ladixstudio: [Link](https://www.creativefabrica.com/product/kawaii-cartoon-character-cute-shocked/)
+
 ### Acknowledgment
+
 > Thank you to course facilitator Marko for providing a lot of useful information and weekly standup calls.
