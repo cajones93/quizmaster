@@ -468,7 +468,9 @@ body {
         margin: 5px;
     }
 
-
+    .container404-content{
+        height: 28em;
+    }
 
 
     .question-container {
