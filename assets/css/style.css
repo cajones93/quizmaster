@@ -217,6 +217,11 @@ body {
     font-size: 100%;
 }
 
+.container404 h1{
+    font-family: "Fjalla One", sans-serif;
+    letter-spacing: 1px;
+}
+
 .img404{
     object-fit: contain;
     height: 40%;
