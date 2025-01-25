@@ -39,7 +39,7 @@ async function getSessionToken() {
   const sessionTokenValue = sessionToken.token;
 
   if (response.ok) {
-    console.log(sessionTokenValue);
+    // return the token value
     return sessionTokenValue;
   } else {
     throw new Error(sessionToken.error);

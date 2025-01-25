@@ -42,7 +42,6 @@ const loadingDiv = document.getElementById("loading-div");
 // stop keyboard commands
 window.onload = function setLoading() {
   setTimeout(loadingFinished, 3000);
-  console.log("interval set");
 };
 
 function loadingFinished() {
@@ -56,7 +55,6 @@ function getParams() {
 
 
   if (localStorage.length < 1) {
-    console.log("Error, no quiz params");
     paramsErrorModal.style.display = 'block';
   }
   // set the parameters
@@ -79,11 +77,8 @@ async function getData(API_URL) {
   }
 
   const data = await response.json();
-
-  console.log("response code: ", data.response_code);
   //   if session token needs to be reset, call the error modal
   if (data.response_code === 4) {
-    console.log("Response Code 4 Error");
     tokenErrorModal.style.display = "block";
   } else {
     // not response code 4
@@ -93,12 +88,9 @@ async function getData(API_URL) {
 
 // refresh token called through error modal button
 async function refreshToken() {
-  console.log("Response Code 4 Error called");
   const resetResponse = await fetch((tokenResetURL + sessionToken), {
     method: "GET"
   });
-  console.log(`Token reset successful!"
-      URL: ${tokenResetURL}${sessionToken}`);
   // reload the page to show loading div and avoid too many api calls
   location.reload();
   if (!resetResponse.ok) {
@@ -137,13 +129,11 @@ async function startGame() {
   //get the URL
   let API_URL = await quizParams.url;
 
-  console.log(API_URL);
   try {
     quizData = await getData(API_URL);
   } catch (error) {
     console.error("Error:", error);
   }
-  console.log(quizData);
 
   // map data into quiz questions
   quizQuestions = quizData.results.map(question => ({
@@ -152,16 +142,13 @@ async function startGame() {
     incorrectAnswers: question.incorrect_answers,
   }));
 
-  console.log("Quiz Questions:", quizQuestions);
-
   // remove initial event listeners and reveal buttonsbutton data
   changeButtons(quizParams.quizType);
   // add new listeners to check if answer is correct and change question and answers
   addButtonListeners();
 
-  console.log("totalQuestions = ", totalQuestions);
+  // Display the number of total questions
   totalQuestions.innerText = quizLength;
-
 
   // Call setQuestionAndAnswers after defining it
   setQuestionAndAnswers();
@@ -184,19 +171,17 @@ function addButtonListeners() {
 async function setQuestionAndAnswers() {
   // After final question
   if (questionNo >= quizLength) {
-
     showScore();
     return 0;
   }
-
+  // Display the current question container with question no and back to menu button 
   currentQuestionContainer.style.display = "flex";
   questionNoText.innerText = questionNo + 1;
 
+  // set current question
   currentQuestion = quizQuestions[questionNo];
 
-  console.log("current question: ", currentQuestion);
-  // set question text
-
+  // display question text
   question.innerHTML = currentQuestion.question;
 
   let allAnswers = currentQuestion.incorrectAnswers.concat([currentQuestion.correctAnswer]); // Combine incorrect and correct answers
@@ -244,6 +229,5 @@ function showScore() {
     <br>
     <span class="small-modal-text">Click the button below to return to the menu</span>`;
 
-  console.log(scorePercent);
   scoreModal.style.display = "block";
 }
