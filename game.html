@@ -1,115 +1,130 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Expand your horizons with our fun, engaging online quizzes. Learn something new, test and improve your knowledge, and have a blast while doing it.">
-    <meta name="keywords" content="online trivia, online quizzes, trivia games, trivia questions, learn online, fun quizzes, educational games, free quizzes">
-    <meta name="author" content="Callum Jones">
-    <title>Quizmaster</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="icon" type="image/x-icon" href="assets/images/favicon.png">
-  </head>
-  <body>
-    <!-- HEADER LOGO -->
-    <div class="header-container">
-      <div class="header-div" title="Quizmaster">
-      </div>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+    content="Expand your horizons with our fun, engaging online quizzes. Learn something new, test and improve your knowledge, and have a blast while doing it.">
+  <meta name="keywords"
+    content="online trivia, online quizzes, trivia games, trivia questions, learn online, fun quizzes, educational games, free quizzes">
+  <meta name="author" content="Callum Jones">
+  <title>Quizmaster</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" type="image/x-icon" href="assets/images/favicon.png">
+</head>
+
+<body>
+  <!-- HEADER LOGO -->
+  <div class="header-container">
+    <div class="header-div" title="Quizmaster">
     </div>
+  </div>
 
-      <div id="loading-div">
-        <div class="spinner-grow loading-spinner" role="status">
+  <div id="loading-div">
+    <div class="spinner-grow loading-spinner" role="status">
+    </div>
+    <br>
+    <span class="loading-text"><strong>LOADING</strong><br></span><span class="small-text">YOUR QUIZ IS LOADING</span>
+  </div>
+
+  <!-- Question number -->
+
+  <div id="current-question-container" class="container">
+    <a class="menu-link" href="index.html">Back to Menu</a>
+    <h2 class="current-question-section">Question: <strong><span id="questionNo"></span></strong> of <span
+        id="totalQuestions"></span></h2>
+  </div>
+
+  <!-- Question section -->
+  <section>
+    <div class="quiz-container">
+      <div class="row">
+        <div class="col-sm-12 question-container">
+          <h1 id="question" class="text-center">Welcome to the quiz!</h1>
         </div>
-        <br>
-        <span class="loading-text"><strong>LOADING</strong><br></span><span class="small-text">YOUR QUIZ IS LOADING</span>
       </div>
-
-    <!-- Question number -->
-
-      <div id="current-question-container" class="container">
-        <h2 class="current-question-section">Question: <strong><span id="questionNo"></span></strong> of <span id="totalQuestions"></span></h2>
-      </div>
-
-        <!-- Question section -->
-    <section>
-        <div class="quiz-container">
-            <div class="row">
-              <div class="col-sm-12 question-container">
-                <h1 id="question" class="text-center">Welcome to the quiz!</h1>
-              </div>
-            </div>
 
       <!-- Answer buttons -->
 
-            <div class="row">
-              <div class="col-sm-12">
-                <button type="button" class="answer-button" id="answer1">Start Game</button>
-              </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-12">
-                  <button type="button" class="answer-button" id="answer2">Back to Menu</button>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-sm-12">
-                  <button type="button" class="answer-button hidden" id="answer3">Answer 3</button>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-sm-12">
-                  <button type="button" class="answer-button hidden" id="answer4">Answer 4</button>
-                </div>
-              </div>
-          </div>
-        </section>
-                <!-- Score Modal -->
-
-                <div class="modal fade" id="scoreModal" tabindex="-1" role="dialog" aria-labelledby="scoreModalLabel" aria-hidden="true">
-                  <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title" id="scoreModalLabel">Score</h5>
-                        <button id="scoreModalClose" type="button" class="close" data-dismiss="modal" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                        </button>
-                      </div>
-                      <div id="scoreModal-body" class="modal-body">
-                        <!-- Insert score in JS -->
-                      </div>
-                      <div class="modal-footer score-modal-footer">
-                        <button type="button" class="btn btn-secondary" onclick="goToHomepage()" aria-label="go back to the menu">Back to Menu</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-
-        <!-- Error 4 modal -->
-
-        <div class="modal fade" id="errorModalRC4" tabindex="-1" role="dialog" aria-labelledby="errorModalRC4">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="errorModalRC4Label">Error</h5>
-                <button id="errorModalClose" type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                Not enough questions remaining, please refresh the session token below or return to the menu to choose different quiz parameters.
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-primary" onclick="refreshToken()" aria-label="refresh token">Refresh Token</button>
-                <button type="button" class="btn btn-secondary" onclick="goToHomepage()" aria-label="go back to the menu">Back to Menu</button>
-              </div>
-            </div>
-          </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <button type="button" class="answer-button" id="answer1">Start Game</button>
         </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <button type="button" class="answer-button" id="answer2">Back to Menu</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <button type="button" class="answer-button hidden" id="answer3">Answer 3</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <button type="button" class="answer-button hidden" id="answer4">Answer 4</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Score Modal -->
+
+  <div class="modal fade" id="scoreModal" tabindex="-1" role="dialog" aria-labelledby="scoreModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="scoreModalLabel">Score</h5>
+          <button id="scoreModalClose" type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div id="scoreModal-body" class="modal-body">
+          <!-- Insert score in JS -->
+        </div>
+        <div class="modal-footer score-modal-footer">
+          <button type="button" class="btn btn-secondary" onclick="goToHomepage()" aria-label="go back to the menu">Back
+            to Menu</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" async integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="scripts/game.js"></script>
+  <!-- Error 4 modal -->
+
+  <div class="modal fade" id="errorModalRC4" tabindex="-1" role="dialog" aria-labelledby="errorModalRC4">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="errorModalRC4Label">Error</h5>
+          <button id="errorModalClose" type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Not enough questions remaining, please refresh the session token below or return to the menu to choose
+          different quiz parameters.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" onclick="refreshToken()" aria-label="refresh token">Refresh
+            Token</button>
+          <button type="button" class="btn btn-secondary" onclick="goToHomepage()" aria-label="go back to the menu">Back
+            to Menu</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" async
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+  </script>
+  <script src="scripts/game.js"></script>
 </body>
+
 </html>
