@@ -358,6 +358,8 @@ Number | User Story |  Test | Pass
 > Not enough true/false questions in the API for some categories.
 **Resolved** - Tried to sign up to add my own questions but validation email was never received. Decided to remove the hard difficulty option. "Hard" in the difficulty choices now selects "medium" from the API.
 
+> Space under logo not increasing on different screen sizes.
+**Resolved** current-question-container was referred to as a class in CSS instead of an ID.
 
 ## Deployment
 #### Creating Repository on GitHub

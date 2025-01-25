@@ -366,7 +366,7 @@ body {
         font-size: 200%;
     }
 
-    .current-question-container {
+    #current-question-container {
         height: 3em;
     }
 
@@ -498,7 +498,7 @@ body {
         height: 12em;
     }
 
-    .current-question-container {
+    #current-question-container {
         height: 3em;
     }
 
