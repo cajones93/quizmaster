@@ -186,6 +186,44 @@ body {
 
 }
 
+.container404{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.container404-content{
+    height: 20em;
+    width: 80%;
+    
+    border: 3px solid black;
+    border-radius: 15px;
+    text-align: center;
+    background-color: white;
+
+}
+
+.container404 a{
+    font-size: 150%;
+    margin: 10px;
+    border: 2px solid #000;
+    border-radius: 10px;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.img404{
+    object-fit: contain;
+    height: 40%;
+    max-width: 50%;
+    aspect-ratio: auto;
+    margin-top: 10px;
+}
+
+.img404:hover{
+    color: #030A8C;
+}
+
 #question {
     display: flex;
     justify-content: center;
@@ -285,6 +323,13 @@ body {
 /* Tablet */
 @media (min-width:768px) {
 
+    .container404-content{
+        max-width: 50%;
+    }
+
+    .img404{
+        height: 50%;
+    }
 
     body {
 
