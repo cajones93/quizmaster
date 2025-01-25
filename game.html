@@ -71,15 +71,15 @@
       </div>
     </div>
   </section>
-  <!-- Score Modal -->
 
-  <div class="modal fade" id="scoreModal" tabindex="-1" role="dialog" aria-labelledby="scoreModalLabel"
-    aria-hidden="true">
+  <!-- Score Modal -->
+  <div class="modal" id="scoreModal" tabindex="-1" role="dialog" aria-labelledby="scoreModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="scoreModalLabel">Score</h5>
-          <button id="scoreModalClose" type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <button id="scoreModalClose" type="button" class="close" data-dismiss="modal" aria-label="Close"
+            onclick="goToHomepage()">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
@@ -95,14 +95,14 @@
   </div>
 
 
-  <!-- Error 4 modal -->
-
-  <div class="modal fade" id="errorModalRC4" tabindex="-1" role="dialog" aria-labelledby="errorModalRC4">
+  <!-- Token Error Modal -->
+  <div class="modal" id="tokenErrorModal" tabindex="-1" role="dialog" aria-labelledby="tokenErrorModal">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="errorModalRC4Label">Error</h5>
-          <button id="errorModalClose" type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <h5 class="modal-title" id="tokenErrorModalLabel">Error</h5>
+          <button id="tokenErrorModalClose" type="button" class="close" data-dismiss="modal" aria-label="Close"
+            onclick="goToHomepage()">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
@@ -120,6 +120,27 @@
     </div>
   </div>
 
+  <!-- No Quiz Parameters Error Modal -->
+  <div class="modal" id="paramsErrorModal" tabindex="-1" role="dialog" aria-labelledby="paramsErrorModal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="paramsErrorModalLabel">Error</h5>
+          <button id="pararmsErrorModalClose" type="button" class="close" data-dismiss="modal" aria-label="Close"
+            onclick="goToHomepage()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          No quiz parameters detected. Please click the button below to return to the menu and set your quiz parameters.
+        </div>
+        <div class="modal-footer param-modal-footer">
+          <button type="button" class="btn btn-secondary" onclick="goToHomepage()" aria-label="go back to the menu">Back
+            to Menu</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" async
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
