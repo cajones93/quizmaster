@@ -279,6 +279,7 @@ A user cannot submit the quiz parameters form without selecting all parameters  
 A user can submit the quiz parameters form after selecting all parameters  | &check;
 Quiz parameter variables are passed from the index page to the game page | &check;
 The API returns questions and answers after clicking the start game button  | &check;
+A user can return to the index page by pushing the back to home buttons | &check;
 Choosing an answer moves onto the next question  | &check;
 Questions and answers are assigned to the correct places  | &check;
 Question and answer text is displayed correctly | &check;
@@ -290,7 +291,7 @@ The loading div is displayed when the user goes to the game page | &check;
 The loading div is displayed when a user refreshes the game page | &check;
 The loading div is removed after 3 seconds on the game page | &check;
 The quiz parameters still exist when the user refreshes the game page | &check;
-If a user directly enters the game page without setting quiz parameters, they are shown an error | 
+If a user directly enters the game page without setting quiz parameters, they are shown an error | &check;
 
 
 #### User Story Testing
