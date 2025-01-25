@@ -14,20 +14,15 @@ selectElements.forEach(select => {
   });
 });
 
-// check that user has selected a parameter
+// check that a valid parameter has been selected
 function allParamsSelected() {
   return Array.from(selectElements).every(select => select.value !== select.options[0].value);
 }
 
 submitButton.addEventListener("click", async (e) => {
   e.preventDefault(); // Prevent default form submission behavior
-  try {
     await getAPIURL();
     window.location.href = "game.html"; // Redirect to game page after successful submission
-  } catch (error) {
-    console.error("Error:", error);
-    // Handle errors (e.g., display an error message to the user)
-  }
 });
 
 // generate a session token
@@ -58,7 +53,7 @@ async function getAPIURL() {
   let categoryID = setCategoryID(categoryChoice.value);
 
   // Wait for session token
-  const sessionToken = await getSessionToken(); // Await the promise
+  const sessionToken = await getSessionToken();
 
   // build the api url using the session token
   let API_URL = `https://opentdb.com/api.php?amount=${noOfQuestions.value}&category=${categoryID}&difficulty=${difficultyChoice.value}&type=${quizTypeChoice.value}&token=${sessionToken}`;

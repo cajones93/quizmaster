@@ -11,8 +11,6 @@ let quizQuestions;
 // URL to reset session token (add session token after)
 let tokenResetURL = "https://opentdb.com/api_token.php?command=reset&token=";
 
-
-// let scoreText = document.getElementById("score");
 let question = document.getElementById("question");
 // answer buttons
 let answer1Btn = document.getElementById("answer1");
@@ -109,6 +107,7 @@ function goToHomepage() {
 }
 
 function changeButtons(quizType) {
+  // remove the initial event listeners
   answer1Btn.removeEventListener("click", startGame);
   answer2Btn.removeEventListener("click", goToHomepage);
 
@@ -150,7 +149,7 @@ async function startGame() {
   // Display the number of total questions
   totalQuestions.innerText = quizLength;
 
-  // Call setQuestionAndAnswers after defining it
+  // Set the questions and answers
   setQuestionAndAnswers();
 }
 
